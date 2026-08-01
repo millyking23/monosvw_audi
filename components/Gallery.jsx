@@ -2,10 +2,10 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 
 const ITEMS = [
-  { src: "/images/workshop-hero.jpg", tag: "Workshop Floor" },
   { src: "/images/diagnostics-cluster.jpg", tag: "Live Diagnostics Readout" },
   { src: "/images/panel-repair.jpg", tag: "Panel & Body Repair — Audi" },
-  { src: "/images/workshop-about.jpg", tag: "Vehicles In For Service" },
+  { src: "/images/vehicles-in-service.jpg", tag: "Vehicles In Service" },
+  { src: "/images/back-workshop.jpg", tag: "Back Workshop Area" },
   { src: "/images/customer-dmax.jpg", tag: "Customer Vehicle — Isuzu D-Max" },
   { src: "/images/fleet-truck.jpg", tag: "Fleet Vehicle Ready For Dispatch" },
 ];
