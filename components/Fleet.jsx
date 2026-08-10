@@ -25,10 +25,10 @@ export default function Fleet() {
             </h2>
           </Reveal>
           <p className="mt-5 text-silver leading-relaxed">
-            Dedicated fleet programmes built for organisations that can&apos;t afford downtime — scheduled
-            around your operations, priced for volume. Already trusted by fleets including Bulawayo City
-            Council, Econet Wireless and Telecel.
-          </p>
+  Dedicated fleet programmes built for organisations that can&apos;t afford downtime — scheduled
+  around your operations, priced for volume. Trusted by corporate fleets, public-sector
+  organisations, schools, institutions, and businesses across Bulawayo.
+</p>
           <div className="flex flex-wrap gap-2.5 mt-6">
             {TARGETS.map((t) => (
               <span key={t} className="fleet-tag">{t}</span>
