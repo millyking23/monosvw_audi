@@ -18,7 +18,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
-export default functio HomePage() {
+export default function HomePage() {
   return (
     <>
       <Header />
