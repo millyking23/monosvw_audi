@@ -9,7 +9,7 @@ export default function About() {
           <div className="eyebrow">Who We Are</div>
           <Reveal>
             <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
-              Precision engineering, built on the workshop floor
+              Precision automotive engineering, built on the workshop floor
             </h2>
           </Reveal>
 
