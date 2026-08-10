@@ -1,9 +1,9 @@
 const CLIENTS = [
-  "Bulawayo City Council",
-  "Econet Wireless",
-  "Telecel",
+  "Municipal and Local Authorities",
+  "Telecommunications",
+  "Corperate Services",
   "C.I.H Industries (Pvt) Ltd",
-  "Nkulumane High School",
+  "Schools & Educational institutions",
   "Radar Metals",
   "Maco Builders",
   "Insurance & Mining Partners",
