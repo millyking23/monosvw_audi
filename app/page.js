@@ -1,4 +1,4 @@
-mport Header from "@/components/Header";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import WhyChoose from "@/components/WhyChoose";
@@ -18,7 +18,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
-export default function HomePage() {
+export default functio HomePage() {
   return (
     <>
       <Header />
