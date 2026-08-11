@@ -57,7 +57,7 @@ export default function About() {
             <div className="pillar">
               <div className="eyebrow text-[0.62rem]" style={{ color: "var(--blue)" }}>Vision</div>
               <p className="text-silver text-sm leading-snug">
-                To be Southern Africa&apos;s most trusted independent automotive engineering house for premium
+                To be Southern Region&apos;s most trusted independent automotive engineering house for premium
                 and commercial vehicles.
               </p>
             </div>
