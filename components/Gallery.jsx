@@ -56,7 +56,7 @@ function VehicleGallery() {
     <div className="gallery-item">
       <Image
         src={VEHICLE_IMAGES[current]}
-      alt={Vehicles In Service ${current + 1}`}
+      alt="Vehicles In Service"
         fill
         sizes="(max-width: 640px) 50vw, 260px"
         style={{ objectFit: "cover" }}
@@ -92,7 +92,7 @@ function VehicleGallery() {
             key={index}
             type="button"
             onClick={() => setCurrent(index)}
-           aria-label={Go to vehicle image ${index + 1}`}
+           aria-label="Go to vehicle image"
             className={`w-2 h-2 rounded-full transition ${
               index === current
                 ? "bg-white scale-125"
