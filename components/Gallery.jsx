@@ -1,9 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import { useState } from "react";
 import Reveal from "./Reveal";
-
 const VEHICLE_IMAGES = [
   "/images/vehicles-in-service.jpg",
   "/images/vehicles-in-service-2.jpg",
@@ -16,7 +14,6 @@ const VEHICLE_IMAGES = [
   "/images/vehicles-in-service-9.jpeg",
   "/images/vehicles-in-service-10.jpeg",
 ];
-
 const ITEMS = [
   {
     src: "/images/diagnostics-cluster.jpg",
@@ -43,22 +40,18 @@ const ITEMS = [
     tag: "Fleet Vehicle Ready For Dispatch",
   },
 ];
-
 function VehicleGallery() {
   const [current, setCurrent] = useState(0);
-
   const previousImage = () => {
     setCurrent((prev) =>
       prev === 0 ? VEHICLE_IMAGES.length - 1 : prev - 1
     );
   };
-
   const nextImage = () => {
     setCurrent((prev) =>
       prev === VEHICLE_IMAGES.length - 1 ? 0 : prev + 1
     );
   };
-
   return (
     <div className="gallery-item">
       <Image
@@ -68,9 +61,7 @@ function VehicleGallery() {
         sizes="(max-width: 640px) 50vw, 260px"
         style={{ objectFit: "cover" }}
       />
-
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-
       <div className="tag">
         <div className="flex items-center justify-between gap-3">
           <span>Vehicles In Service</span>
@@ -79,7 +70,6 @@ function VehicleGallery() {
           </span>
         </div>
       </div>
-
       <button
         type="button"
         onClick={previousImage}
@@ -88,7 +78,6 @@ function VehicleGallery() {
       >
         ‹
       </button>
-
       <button
         type="button"
         onClick={nextImage}
@@ -97,7 +86,6 @@ function VehicleGallery() {
       >
         ›
       </button>
-
       <div className="absolute bottom-12 left-1/2 z-10 -translate-x-1/2 flex gap-1.5">
         {VEHICLE_IMAGES.map((_, index) => (
           <button
@@ -116,7 +104,6 @@ function VehicleGallery() {
     </div>
   );
 }
-
 export default function Gallery() {
   return (
     <section
@@ -126,7 +113,6 @@ export default function Gallery() {
       <div className="wrap">
         <div className="max-w-[640px] mb-16">
           <div className="eyebrow">Inside The Workshop</div>
-
           <h2
             className="font-display font-semibold text-white"
             style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}
@@ -134,7 +120,6 @@ export default function Gallery() {
             Gallery
           </h2>
         </div>
-
         <div className="gallery-grid">
           {ITEMS.map((item) => (
             <Reveal key={item.type || item.src}>
@@ -149,7 +134,6 @@ export default function Gallery() {
                     sizes="(max-width: 640px) 50vw, 260px"
                     style={{ objectFit: "cover" }}
                   />
-
                   <div className="tag">
                     {item.tag}
                   </div>
