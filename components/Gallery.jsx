@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Reveal from "./Reveal";
 const VEHICLE_IMAGES = [
-  "/images/vehicles-in-service.jpg",
+  "/images/vehicles-in-service.jpeg",
   "/images/vehicles-in-service-2.jpg",
   "/images/vehicles-in-service-3.jpg",
   "/images/vehicles-in-service-4.jpg",
