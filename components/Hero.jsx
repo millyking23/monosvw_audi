@@ -62,7 +62,7 @@ export default function Hero() {
           className="font-display font-semibold text-white max-w-[14ch]"
           style={{ fontSize: "clamp(2.6rem,7vw,5.6rem)", lineHeight: 1.05, textShadow: "0 4px 40px rgba(0,0,0,.5)" }}
         >
-          Engineering Confidence.
+          Auto Engineering Confidence.
           <br />
           <span className="text-red">Driving Excellence.</span>
         </h1>
