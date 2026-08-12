@@ -7,7 +7,7 @@ const VEHICLE_IMAGES = [
   "/images/vehicles-in-service-2.jpg",
   "/images/vehicles-in-service-3.jpg",
   "/images/vehicles-in-service-4.jpg",
-  "/images/vehicles-in-service-5.jpg",
+  "/images/vehicles-in-service-5.jpeg",
   "/images/vehicles-in-service-6.jpeg",
   "/images/vehicles-in-service-7.jpeg",
   "/images/vehicles-in-service-8.jpg",
