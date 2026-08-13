@@ -62,7 +62,7 @@ export async function POST(req) {
   const attachments = [];
   for (const file of files) {
     totalBytes += file.size;
-    if (totalBytes > MAX_TOTAL_BYTES) break; // stop attaching once over budget
+    if (totalBytes > MAX_TOTAL_BYTES) break;
     const buffer = Buffer.from(await file.arrayBuffer());
     attachments.push({
       filename: file.name || "photo.jpg",
@@ -85,7 +85,7 @@ export async function POST(req) {
         <tr><td style="padding:8px 0;color:#888;vertical-align:top;">Issue Description</td><td style="padding:8px 0;white-space:pre-wrap;">${escapeHtml(issue)}</td></tr>
         <tr><td style="padding:8px 0;color:#888;">Photos</td><td style="padding:8px 0;">${attachments.length ? `${attachments.length} photo(s) attached` : "No photos attached"}</td></tr>
       </table>
-      <p style="margin-top:20px;font-size:12px;color:#999;">Reply directly to this email or contact the customer on the number above.</p>
+      <p style="margin-top:20px;font-size:12px;color:#999;">Reply to the customer using the supplied phone number or email.</p>
     </div>
   `;
 
@@ -100,7 +100,7 @@ export async function POST(req) {
     (attachments.length ? `\nPhotos: ${attachments.length} attached (see email)` : "");
 
   const [emailResult, waResult] = await Promise.all([
-    sendEmail({ subject, html, text, attachments }),
+    sendEmail({ subject, html, text, attachments, replyTo: email || undefined }),
     sendWhatsApp(waMessage),
   ]);
 
@@ -116,7 +116,7 @@ export async function POST(req) {
 
   return NextResponse.json({
     ok: true,
-    message: "Quote request received.",
+    message: "Quote request received. Our estimating team will contact you shortly.",
     channels: { email: emailResult, whatsapp: waResult },
   });
 }
