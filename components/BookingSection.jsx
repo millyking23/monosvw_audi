@@ -24,7 +24,7 @@ export default function BookingSection() {
           <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
             Book a service or request a quote
           </h2>
-          <p className="mt-4 text-silver">Fill in the form below — we&apos;ll confirm by email and WhatsApp.</p>
+          <p className="mt-4 text-silver">Fill in the form below — your request is sent securely to the Monos service desk.</p>
         </div>
 
         <div className="flex gap-2.5 mb-10">
