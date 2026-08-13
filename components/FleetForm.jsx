@@ -65,7 +65,7 @@ export default function FleetForm() {
               <div className="confirm-icon">&#10003;</div>
               <h3 className="text-xl font-display font-semibold text-white">Fleet proposal request received</h3>
               <p className="mt-2.5 text-silver">
-                Our fleet team will review your requirements and follow up by email and WhatsApp shortly.
+                Thank you — our fleet team has received your requirements and will contact you to discuss the proposal.
               </p>
             </div>
           </Reveal>
@@ -106,7 +106,7 @@ export default function FleetForm() {
                   {status === "loading" ? "Sending..." : "Request Fleet Proposal"}
                 </button>
                 <span className="text-[0.78rem] text-silver-dim">
-                  We typically respond to corporate enquiries within one business day.
+                  Your request is sent securely to the Monos fleet team.
                 </span>
               </div>
             </form>
