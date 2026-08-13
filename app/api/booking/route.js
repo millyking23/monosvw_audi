@@ -96,7 +96,7 @@ export async function POST(req) {
     rows.map(([label, value]) => `${label}: ${value}`).join("\n");
 
   const [emailResult, waResult] = await Promise.all([
-    sendEmail({ subject, html, text }),
+    sendEmail({ subject, html, text, replyTo: email || undefined }),
     sendWhatsApp(waMessage),
   ]);
 
@@ -104,7 +104,7 @@ export async function POST(req) {
 
   return NextResponse.json({
     ok: true,
-    message: "Booking received.",
+    message: "Booking received. Our service desk will contact you to confirm the appointment.",
     channels: { email: emailResult, whatsapp: waResult },
   });
 }
