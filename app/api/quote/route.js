@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import {
   sendEmail,
+  sendCustomerEmail,
   sendWhatsApp,
   isRateLimited,
   honeypotTripped,
@@ -91,6 +92,21 @@ export async function POST(req) {
 
   const text = `NEW QUOTE REQUEST\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email || "—"}\nVehicle: ${vehicle}\nIssue: ${issue}\nPhotos: ${attachments.length} attached`;
 
+  const customerHtml = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#222;line-height:1.6;">
+      <h2 style="margin-bottom:6px;">Thank you for contacting Monos VW-Audi Service &amp; Parts</h2>
+      <p>Dear ${escapeHtml(name)},</p>
+      <p>Thank you for requesting a quote from us. We have received your enquiry and any photos you submitted.</p>
+      <p>Our estimating team will review the vehicle details and issue description, then contact you shortly with the next steps and, where possible, a quotation.</p>
+      <p><strong>Vehicle:</strong> ${escapeHtml(vehicle)}<br />
+      <strong>Issue:</strong> ${escapeHtml(issue)}</p>
+      <p>Please note that this email confirms receipt of your quote request and is not a quotation or final price. We will contact you after reviewing the information provided.</p>
+      <p>Kind regards,<br /><strong>Monos VW-Audi Service &amp; Parts</strong></p>
+    </div>
+  `;
+
+  const customerText = `Dear ${name},\n\nThank you for requesting a quote from Monos VW-Audi Service & Parts. We have received your enquiry and any photos you submitted.\n\nOur estimating team will review the vehicle details and issue description, then contact you shortly with the next steps and, where possible, a quotation.\n\nVehicle: ${vehicle}\nIssue: ${issue}\n\nPlease note that this email confirms receipt of your quote request and is not a quotation or final price. We will contact you after reviewing the information provided.\n\nKind regards,\nMonos VW-Audi Service & Parts`;
+
   const waMessage =
     `*New Quote Request*\n` +
     `Name: ${name}\n` +
@@ -99,8 +115,14 @@ export async function POST(req) {
     `Issue: ${issue}` +
     (attachments.length ? `\nPhotos: ${attachments.length} attached (see email)` : "");
 
-  const [emailResult, waResult] = await Promise.all([
-    sendEmail({ subject, html, text, attachments, replyTo: email || undefined }),
+  const [emailResult, customerEmailResult, waResult] = await Promise.all([
+    sendEmail({ subject, html, text, attachments }),
+    sendCustomerEmail({
+      to: email || undefined,
+      subject: "We received your Monos quote request",
+      html: customerHtml,
+      text: customerText,
+    }),
     sendWhatsApp(waMessage),
   ]);
 
@@ -117,6 +139,6 @@ export async function POST(req) {
   return NextResponse.json({
     ok: true,
     message: "Quote request received. Our estimating team will contact you shortly.",
-    channels: { email: emailResult, whatsapp: waResult },
+    channels: { email: emailResult, customerEmail: customerEmailResult, whatsapp: waResult },
   });
 }
