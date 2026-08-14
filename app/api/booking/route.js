@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import {
   sendEmail,
+  sendCustomerEmail,
   sendWhatsApp,
   isRateLimited,
   honeypotTripped,
@@ -91,12 +92,35 @@ export async function POST(req) {
 
   const text = rows.map(([label, value]) => `${label}: ${value}`).join("\n");
 
+  const customerHtml = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#222;line-height:1.6;">
+      <h2 style="margin-bottom:6px;">Thank you for contacting Monos VW-Audi Service &amp; Parts</h2>
+      <p>Dear ${escapeHtml(name)},</p>
+      <p>Thank you for submitting your service booking request. We have received your request successfully.</p>
+      <p>Our service team will review the details and contact you shortly to confirm the appointment, availability and any further information we may need.</p>
+      <p><strong>Vehicle:</strong> ${escapeHtml(`${vehicleMake} ${vehicleModel}${year ? ` (${year})` : ""}`)}<br />
+      <strong>Service requested:</strong> ${escapeHtml(service)}<br />
+      <strong>Preferred date:</strong> ${escapeHtml(date || "Not specified")}<br />
+      <strong>Preferred time:</strong> ${escapeHtml(time || "Not specified")}</p>
+      <p>Please note that this email confirms receipt of your request and does not yet confirm an appointment. We will contact you with confirmation.</p>
+      <p>Kind regards,<br /><strong>Monos VW-Audi Service &amp; Parts</strong></p>
+    </div>
+  `;
+
+  const customerText = `Dear ${name},\n\nThank you for submitting your service booking request to Monos VW-Audi Service & Parts. We have received your request successfully.\n\nOur service team will review the details and contact you shortly to confirm the appointment, availability and any further information we may need.\n\nVehicle: ${vehicleMake} ${vehicleModel}${year ? ` (${year})` : ""}\nService requested: ${service}\nPreferred date: ${date || "Not specified"}\nPreferred time: ${time || "Not specified"}\n\nPlease note that this email confirms receipt of your request and does not yet confirm an appointment. We will contact you with confirmation.\n\nKind regards,\nMonos VW-Audi Service & Parts`;
+
   const waMessage =
     `*New Service Booking*\n` +
     rows.map(([label, value]) => `${label}: ${value}`).join("\n");
 
-  const [emailResult, waResult] = await Promise.all([
-    sendEmail({ subject, html, text, replyTo: email || undefined }),
+  const [emailResult, customerEmailResult, waResult] = await Promise.all([
+    sendEmail({ subject, html, text }),
+    sendCustomerEmail({
+      to: email || undefined,
+      subject: "We received your Monos service booking request",
+      html: customerHtml,
+      text: customerText,
+    }),
     sendWhatsApp(waMessage),
   ]);
 
@@ -105,6 +129,6 @@ export async function POST(req) {
   return NextResponse.json({
     ok: true,
     message: "Booking received. Our service desk will contact you to confirm the appointment.",
-    channels: { email: emailResult, whatsapp: waResult },
+    channels: { email: emailResult, customerEmail: customerEmailResult, whatsapp: waResult },
   });
 }
