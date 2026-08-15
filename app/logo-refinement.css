@@ -1,0 +1,15 @@
+/* Clean Monos logo treatment: no white tile or white badge around the logo. */
+.logo-mark{
+  background:transparent;
+  border:0;
+  border-radius:0;
+}
+.logo-mark::after{
+  display:none;
+}
+.hero-badge{
+  background:transparent;
+  padding:0;
+  border-radius:0;
+  box-shadow:none;
+}
