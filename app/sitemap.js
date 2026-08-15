@@ -1,8 +1,9 @@
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://monovwaudi.co.zw";
+
 export default function sitemap() {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://www.monosvwaudi.co.zw";
   return [
     {
-      url: base,
+      url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
