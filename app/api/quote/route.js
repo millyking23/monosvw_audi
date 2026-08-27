@@ -136,9 +136,13 @@ export async function POST(req) {
     receivedAt: new Date().toISOString(),
   });
 
+  const whatsappNumber = String(process.env.WHATSAPP_TO_NUMBER || "263712579531").replace(/[^0-9]/g, "");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
+
   return NextResponse.json({
     ok: true,
     message: "Quote request received. Our estimating team will contact you shortly.",
+    whatsappLink,
     channels: { email: emailResult, customerEmail: customerEmailResult, whatsapp: waResult },
   });
 }
