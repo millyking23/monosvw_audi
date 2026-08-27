@@ -6,6 +6,7 @@ export default function QuoteForm() {
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [deliveryWarning, setDeliveryWarning] = useState("");
+  const [whatsappLink, setWhatsappLink] = useState("");
   const [fileCount, setFileCount] = useState(0);
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef(null);
@@ -16,6 +17,7 @@ export default function QuoteForm() {
     setStatus("loading");
     setErrorMsg("");
     setDeliveryWarning("");
+    setWhatsappLink("");
 
     const form = formRef.current;
     const data = new FormData(form);
@@ -27,6 +29,7 @@ export default function QuoteForm() {
       if (!json.channels?.whatsapp?.sent) {
         setDeliveryWarning("Your quote was received, but our WhatsApp notification could not be delivered. Our team will still receive the available email notification.");
       }
+      setWhatsappLink(json.whatsappLink || "");
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -42,6 +45,16 @@ export default function QuoteForm() {
         <p className="mt-2.5 text-silver">
           Our estimating team will review your photos and description and contact you shortly with the next steps and, where possible, a quotation.
         </p>
+        {whatsappLink && (
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary inline-flex mt-5"
+          >
+            Open WhatsApp to Send Request
+          </a>
+        )}
         {deliveryWarning && <p className="mt-4 text-amber-300 text-sm">{deliveryWarning}</p>}
       </div>
     );
