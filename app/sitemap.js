@@ -10,6 +10,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/areas/bulawayo`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/auto-advice`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/trust/local-business`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${SITE_URL}/services/car-workshop-mechanical-repairs`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     ...serviceSlugs.map((slug) => ({ url: `${SITE_URL}/services/${slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 })),
     ...problemSlugs.map((slug) => ({ url: `${SITE_URL}/problems/${slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.8 })),
   ];
