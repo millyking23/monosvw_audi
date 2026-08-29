@@ -1,12 +1,23 @@
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://monovwaudi.co.zw";
 
+const serviceSlugs = [
+  "vw-service-repairs",
+  "audi-service-repairs",
+  "computer-diagnostics",
+  "fuel-injector-testing-cleaning",
+  "panel-beating-spray-painting",
+  "fleet-maintenance",
+];
+
 export default function sitemap() {
+  const now = new Date();
   return [
-    {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
+    { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    ...serviceSlugs.map((slug) => ({
+      url: `${SITE_URL}/services/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    })),
   ];
 }
