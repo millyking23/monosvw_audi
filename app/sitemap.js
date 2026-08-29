@@ -12,6 +12,11 @@ const serviceSlugs = [
 const problemSlugs = [
   "vw-audi-wont-start-bulawayo",
   "car-overheating-bulawayo",
+  "check-engine-light-bulawayo",
+  "car-losing-power-bulawayo",
+  "fuel-injector-problems-bulawayo",
+  "rough-idle-bulawayo",
+  "brake-problems-bulawayo",
 ];
 
 export default function sitemap() {
