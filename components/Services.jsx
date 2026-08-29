@@ -2,46 +2,46 @@ import Reveal from "./Reveal";
 
 const CATEGORIES = [
   {
-    num: "01 / MECHANICAL",
-    title: "Mechanical & Servicing",
-    items: ["Mechanical Repairs", "Vehicle Servicing", "Engine Rebuilding", "Suspension Repairs", "Gearbox Repairs", "Transmission Repairs"],
+    num: "01 / ALL MAKES",
+    title: "Car Workshop & Mechanical Repairs",
+    items: ["All Makes & Models", "Mechanical Repairs", "Vehicle Servicing", "Engine Repairs & Rebuilding", "Suspension Repairs", "Gearbox & Transmission Repairs"],
     cta: { href: "#book", label: "Book This Service" },
-    learn: null,
+    learn: { href: "/areas/bulawayo", label: "Workshop in Bulawayo →" },
   },
   {
-    num: "02 / DIAGNOSTICS",
-    title: "Diagnostics & Electrics",
-    items: ["Computer Diagnostics", "Auto Electrics", "Vehicle Programming", "ECU Repairs", "Key Coding & Lost Key Replacement", "Spare Key Programming"],
+    num: "02 / VW & AUDI",
+    title: "VW & Audi Specialists",
+    items: ["VW Servicing & Repairs", "Audi Servicing & Repairs", "Computer Diagnostics", "Vehicle Programming", "ECU Repairs", "Key Coding & Spare Key Programming"],
+    cta: { href: "#book", label: "Book This Service" },
+    learn: { href: "/services/vw-service-repairs", label: "VW service & repairs →" },
+  },
+  {
+    num: "03 / DIAGNOSTICS",
+    title: "Diagnostics & Auto Electrics",
+    items: ["Computer Diagnostics", "Auto Electrical Faults", "Warning Light Diagnosis", "Vehicle Programming", "ECU Diagnostics & Repairs", "Electrical Fault Finding"],
     cta: { href: "#book", label: "Book This Service" },
     learn: { href: "/services/computer-diagnostics", label: "Diagnostics in Bulawayo →" },
   },
   {
-    num: "03 / COMFORT SYSTEMS",
-    title: "Comfort & Core Systems",
-    items: ["Air Conditioning", "Brake Systems", "Exhaust Systems", "Gaskets & Seals", "Fuel Injector Cleaning"],
+    num: "04 / FUEL & PERFORMANCE",
+    title: "Fuel System & Performance",
+    items: ["Fuel Injector Testing", "Fuel Injector Cleaning", "Fuel System Diagnostics", "Engine Performance Checks", "Air Conditioning", "Exhaust Systems"],
     cta: { href: "#book", label: "Book This Service" },
     learn: { href: "/services/fuel-injector-testing-cleaning", label: "Injector testing & cleaning →" },
   },
   {
-    num: "04 / BODY & PAINT",
-    title: "Panel & Paint Shop",
-    items: ["Panel Beating", "Spray Painting", "Accident Repairs", "Chassis Straightening"],
-    cta: { href: "#book", label: "Book This Service" },
+    num: "05 / BODY & PAINT",
+    title: "Panel Beating & Spray Painting",
+    items: ["Panel Beating", "Spray Painting", "Accident Repairs", "Chassis Straightening", "Dent & Body Repairs", "Vehicle Refinishing"],
+    cta: { href: "#book", label: "Get a Bodywork Quote" },
     learn: { href: "/services/panel-beating-spray-painting", label: "Panel & paint in Bulawayo →" },
   },
   {
-    num: "05 / FLEET & MACHINERY",
-    title: "Fleet & Heavy Machinery",
-    items: ["Fleet Maintenance", "Machine Repairs", "Construction Equipment Repairs", "On-site Repairs", "Breakdown Assistance"],
+    num: "06 / FLEET & MACHINERY",
+    title: "Fleet, Machinery & Parts",
+    items: ["Fleet Maintenance", "Machine Repairs", "Construction Equipment Repairs", "On-site Repairs", "Breakdown Assistance", "Vehicle & Machine Parts Supply"],
     cta: { href: "#fleet", label: "Fleet Proposal" },
     learn: { href: "/services/fleet-maintenance", label: "Fleet maintenance in Bulawayo →" },
-  },
-  {
-    num: "06 / PARTS & SUPPLY",
-    title: "Parts & Supply",
-    items: ["Vehicle Parts Supply", "Machine Parts Supply", "Tyres", "Lubricants", "Battery Supply"],
-    cta: { href: "#quote", label: "Request Quote" },
-    learn: null,
   },
 ];
 
@@ -49,14 +49,13 @@ export default function Services() {
   return (
     <section id="services" className="section-pad bg-charcoal-2 border-y border-white/[0.08]">
       <div className="wrap">
-        <div className="max-w-[640px] mb-16">
-          <div className="eyebrow">Full Capability</div>
+        <div className="max-w-[680px] mb-16">
+          <div className="eyebrow">Full Workshop Capability</div>
           <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
-            Engineering services, end to end
+            One workshop. Cars, diagnostics, bodywork & paint.
           </h2>
           <p className="mt-4 text-silver">
-            From a single diagnostic scan to a full accident rebuild — every service below is carried out
-            in-house at our Bulawayo workshop.
+            Monos works on VW, Audi and other makes and models. From routine servicing and mechanical repairs to computer diagnostics, fuel injector testing and cleaning, panel beating and professional spray painting — our Bulawayo workshop covers the job end to end.
           </p>
         </div>
 
