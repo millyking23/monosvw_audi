@@ -9,16 +9,17 @@ const serviceSlugs = [
   "fleet-maintenance",
 ];
 
+const problemSlugs = [
+  "vw-audi-wont-start-bulawayo",
+  "car-overheating-bulawayo",
+];
+
 export default function sitemap() {
   const now = new Date();
   return [
     { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/areas/bulawayo`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
-    ...serviceSlugs.map((slug) => ({
-      url: `${SITE_URL}/services/${slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    })),
+    ...serviceSlugs.map((slug) => ({ url: `${SITE_URL}/services/${slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 })),
+    ...problemSlugs.map((slug) => ({ url: `${SITE_URL}/problems/${slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.8 })),
   ];
 }
