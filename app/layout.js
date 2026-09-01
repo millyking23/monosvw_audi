@@ -10,14 +10,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://monovwaudi.co.zw";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Monos VW-Audi Service & Parts | Car Service & Repairs in Bulawayo", template: "%s | Monos VW-Audi Service & Parts" },
-  description: "Monos VW-Audi Service & Parts (Pvt) Ltd is a vehicle service and repair workshop in Bulawayo, Zimbabwe. VW and Audi specialists offering computer diagnostics, auto electrical work, injector testing and cleaning, panel beating, spray painting, fleet maintenance and parts.",
-  keywords: ["Monos", "Monos VW Audi", "Monos Bulawayo", "VW specialist Bulawayo", "Audi specialist Bulawayo", "car service Bulawayo", "car repairs Bulawayo", "vehicle diagnostics Bulawayo", "auto electrician Bulawayo", "panel beating Bulawayo", "spray painting Bulawayo", "fuel injector testing Bulawayo", "fuel injector cleaning Bulawayo", "fleet maintenance Zimbabwe", "vehicle repairs Zimbabwe"],
+  title: { default: "Monos VW-Audi Service & Parts | Car Service, Repairs & Bodywork in Bulawayo", template: "%s | Monos VW-Audi Service & Parts" },
+  description: "Monos is a Bulawayo vehicle workshop for VW, Audi and other makes and models. Car servicing, mechanical repairs, diagnostics, auto electrical, injector testing and cleaning, panel beating, spray painting, accident repairs, fleet maintenance and parts.",
+  keywords: ["Monos", "Monos VW Audi", "Monos Bulawayo", "car workshop Bulawayo", "mechanic Bulawayo", "car repairs Bulawayo", "car service Bulawayo", "vehicle repairs Bulawayo", "VW specialist Bulawayo", "Audi specialist Bulawayo", "vehicle diagnostics Bulawayo", "auto electrician Bulawayo", "panel beating Bulawayo", "spray painting Bulawayo", "accident repairs Bulawayo", "fuel injector testing Bulawayo", "fuel injector cleaning Bulawayo", "fleet maintenance Zimbabwe"],
   authors: [{ name: "Monos VW-Audi Service & Parts (Pvt) Ltd" }],
   alternates: { canonical: SITE_URL },
-  openGraph: { title: "Monos VW-Audi Service & Parts | Car Service & Repairs in Bulawayo", description: "VW, Audi and all-makes vehicle service, diagnostics, repairs, injector testing and cleaning, panel beating and spray painting in Bulawayo, Zimbabwe.", url: SITE_URL, siteName: "Monos VW-Audi Service & Parts", locale: "en_ZW", type: "website", images: [{ url: "/images/workshop-hero.jpg", width: 1100, height: 733 }] },
-  twitter: { card: "summary_large_image", title: "Monos VW-Audi Service & Parts", description: "Vehicle service, diagnostics and repairs in Bulawayo, Zimbabwe.", images: ["/images/workshop-hero.jpg"] },
-  icons: { icon: [{ url: "/favicon.ico" }, { url: "/favicon-32.png", sizes: "32x32", type: "image/png" }, { url: "/favicon-16.png", sizes: "16x16", type: "image/png" }], apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }] },
+  openGraph: { title: "Monos VW-Audi Service & Parts | Car Service, Repairs & Bodywork in Bulawayo", description: "VW, Audi and all-makes vehicle servicing, mechanical repairs, diagnostics, panel beating and professional spray painting in Bulawayo, Zimbabwe.", url: SITE_URL, siteName: "Monos VW-Audi Service & Parts", locale: "en_ZW", type: "website", images: [{ url: "/images/workshop-hero.jpg", width: 1100, height: 733, alt: "Monos vehicle workshop in Bulawayo" }] },
+  twitter: { card: "summary_large_image", title: "Monos VW-Audi Service & Parts", description: "Car workshop, diagnostics, repairs, panel beating and spray painting in Bulawayo.", images: ["/images/workshop-hero.jpg"] },
+  icons: { icon: [{ url: "/favicon.ico" }, { url: "/favicon-32.png", sizes: "32x32", type: "image/png" }], apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   category: "Automotive",
 };
@@ -31,19 +31,19 @@ export default function RootLayout({ children }) {
     name: "Monos VW-Audi Service & Parts (Pvt) Ltd",
     alternateName: "Monos VW-Audi Service & Parts",
     image: `${SITE_URL}/images/workshop-hero.jpg`,
-    "@id": SITE_URL,
+    "@id": `${SITE_URL}/#business`,
     url: SITE_URL,
     telephone: "+263712579531",
     email: "monosvw_audiservice@yahoo.com",
     address: { "@type": "PostalAddress", streetAddress: "16 Iron Bridge Rd", addressLocality: "Bulawayo", addressCountry: "ZW" },
     foundingDate: "2016",
-    areaServed: ["Bulawayo", "Zimbabwe"],
-    serviceType: ["Vehicle servicing", "Vehicle repairs", "VW servicing and repairs", "Audi servicing and repairs", "Computer diagnostics", "Auto electrical services", "Fuel injector testing and cleaning", "Panel beating", "Spray painting", "Fleet maintenance", "Vehicle parts supply"],
-    priceRange: "$$",
+    areaServed: [{ "@type": "City", name: "Bulawayo" }, { "@type": "Country", name: "Zimbabwe" }],
+    serviceType: ["Car workshop", "Vehicle servicing", "Mechanical repairs", "VW servicing and repairs", "Audi servicing and repairs", "Computer diagnostics", "Auto electrical services", "Fuel injector testing and cleaning", "Panel beating", "Spray painting", "Accident repairs", "Fleet maintenance", "Vehicle parts supply"],
     openingHoursSpecification: [
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "08:00", closes: "14:00" },
     ],
+    sameAs: [],
   };
 
   return <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}><body className="bg-black text-offwhite font-body antialiased"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />{children}</body></html>;
