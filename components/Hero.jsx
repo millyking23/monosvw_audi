@@ -54,28 +54,28 @@ export default function Hero() {
 
         <div className="hud-line max-w-[560px] mb-8">
           <span className="dot" />
-          <span>OBD-II LINK ACTIVE // BULAWAYO WORKSHOP · EST. 2016</span>
+          <span>VW &amp; AUDI SPECIALISTS // ALL MAKES · BULAWAYO · EST. 2016</span>
           <span className="bar" />
         </div>
 
         <h1
-          className="font-display font-semibold text-white max-w-[14ch]"
+          className="font-display font-semibold text-white max-w-[15ch]"
           style={{ fontSize: "clamp(2.6rem,7vw,5.6rem)", lineHeight: 1.05, textShadow: "0 4px 40px rgba(0,0,0,.5)" }}
         >
-          Auto Engineering Confidence.
+          VW &amp; Audi Car Service,
           <br />
-          <span className="text-red">Driving Excellence.</span>
+          <span className="text-red">Repairs &amp; Diagnostics.</span>
         </h1>
 
-        <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-silver">
-          Specialists in Volkswagen, Audi and all vehicle brands since 2016. Trusted by individuals,
-          businesses, mines and organisations across Zimbabwe.
+        <p className="mt-6 max-w-[600px] text-lg leading-relaxed text-silver">
+          Monos is a Bulawayo car workshop specialising in Volkswagen and Audi, while servicing other makes and models too.
+          From mechanical repairs and computer diagnostics to fuel injector testing and cleaning, panel beating and professional spray painting, we handle the job from diagnosis to completion.
         </p>
 
         <div className="flex flex-wrap gap-4 mt-11">
           <a href="#book" className="btn btn-primary">Book Service</a>
           <a href="#quote" className="btn btn-ghost">Request Quote</a>
-          <a href="https://wa.me/263712579531" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+          <a href="https://wa.me/263712579531" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" aria-label="Contact Monos on WhatsApp">
             WhatsApp Us
           </a>
         </div>
