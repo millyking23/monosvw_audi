@@ -15,26 +15,36 @@ export default function FAQ() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="section-pad bg-charcoal-2 border-y border-white/[0.08]">
+    <section id="faq" className="section-pad bg-charcoal-2 border-y border-white/[0.08]" aria-labelledby="faq-heading">
       <div className="wrap">
         <div className="max-w-[640px] mb-14">
           <div className="eyebrow">Questions</div>
-          <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
+          <h2 id="faq-heading" className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
             Frequently asked questions
           </h2>
         </div>
         <div className="max-w-[820px]">
-          {FAQS.map((f, i) => (
-            <div key={f.q} className={`faq-item ${open === i ? "open" : ""}`} onClick={() => setOpen(open === i ? null : i)}>
-              <div className="flex justify-between items-center text-white font-medium faq-q">
-                <span>{f.q}</span>
-                <span className="plus">+</span>
+          {FAQS.map((f, i) => {
+            const isOpen = open === i;
+            const answerId = `faq-answer-${i}`;
+            return (
+              <div key={f.q} className={`faq-item ${isOpen ? "open" : ""}`}>
+                <button
+                  type="button"
+                  className="w-full flex justify-between items-center text-left text-white font-medium faq-q"
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
+                  onClick={() => setOpen(isOpen ? null : i)}
+                >
+                  <span>{f.q}</span>
+                  <span className="plus" aria-hidden="true">+</span>
+                </button>
+                <div id={answerId} role="region" aria-hidden={!isOpen} className="faq-a" style={{ maxHeight: isOpen ? "220px" : "0px" }}>
+                  <p className="pt-3.5 text-silver text-sm leading-relaxed max-w-[70ch]">{f.a}</p>
+                </div>
               </div>
-              <div className="faq-a" style={{ maxHeight: open === i ? "220px" : "0px" }}>
-                <p className="pt-3.5 text-silver text-sm leading-relaxed max-w-[70ch]">{f.a}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
