@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Counter({ target, suffix = "" }) {
   const ref = useRef(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(target);
 
   useEffect(() => {
     const el = ref.current;
@@ -35,7 +35,7 @@ function Counter({ target, suffix = "" }) {
   }, [target]);
 
   return (
-    <b ref={ref} className="block font-display text-3xl font-bold text-white">
+    <b ref={ref} className="block font-display text-3xl font-bold text-white" aria-label={`${target}${suffix}`}>
       {value.toLocaleString()}
       {suffix}
     </b>
