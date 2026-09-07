@@ -40,8 +40,8 @@ export default function RootLayout({ children }) {
     areaServed: [{ "@type": "City", name: "Bulawayo" }, { "@type": "Country", name: "Zimbabwe" }],
     serviceType: ["Car workshop", "Vehicle servicing", "Mechanical repairs", "VW servicing and repairs", "Audi servicing and repairs", "Computer diagnostics", "Auto electrical services", "Fuel injector testing and cleaning", "Panel beating", "Spray painting", "Accident repairs", "Fleet maintenance", "Vehicle parts supply"],
     openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "08:00", closes: "14:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "07:30", closes: "17:30" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "08:00", closes: "13:00" },
     ],
     sameAs: [],
   };
