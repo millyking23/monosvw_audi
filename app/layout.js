@@ -27,23 +27,39 @@ export const viewport = { themeColor: "#0b0b0b", width: "device-width", initialS
 export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    name: "Monos VW-Audi Service & Parts (Pvt) Ltd",
-    alternateName: "Monos VW-Audi Service & Parts",
-    image: `${SITE_URL}/images/workshop-hero.jpg`,
-    "@id": `${SITE_URL}/#business`,
-    url: SITE_URL,
-    telephone: "+263712579531",
-    email: "monosvw_audiservice@yahoo.com",
-    address: { "@type": "PostalAddress", streetAddress: "16 Iron Bridge Rd", addressLocality: "Bulawayo", addressCountry: "ZW" },
-    foundingDate: "2016",
-    areaServed: [{ "@type": "City", name: "Bulawayo" }, { "@type": "Country", name: "Zimbabwe" }],
-    serviceType: ["Car workshop", "Vehicle servicing", "Mechanical repairs", "VW servicing and repairs", "Audi servicing and repairs", "Computer diagnostics", "Auto electrical services", "Fuel injector testing and cleaning", "Panel beating", "Spray painting", "Accident repairs", "Fleet maintenance", "Vehicle parts supply"],
-    openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "07:30", closes: "17:30" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "08:00", closes: "13:00" },
+    "@graph": [
+      {
+        "@type": "AutoRepair",
+        name: "Monos VW-Audi Service & Parts (Pvt) Ltd",
+        alternateName: "Monos VW-Audi Service & Parts",
+        image: `${SITE_URL}/images/workshop-hero.jpg`,
+        "@id": `${SITE_URL}/#business`,
+        url: SITE_URL,
+        telephone: "+263712579531",
+        email: "monosvw_audiservice@yahoo.com",
+        address: { "@type": "PostalAddress", streetAddress: "16 Iron Bridge Rd", addressLocality: "Bulawayo", addressCountry: "ZW" },
+        foundingDate: "2016",
+        areaServed: [{ "@type": "City", name: "Bulawayo" }, { "@type": "Country", name: "Zimbabwe" }],
+        serviceType: ["Car workshop", "Vehicle servicing", "Mechanical repairs", "VW servicing and repairs", "Audi servicing and repairs", "Computer diagnostics", "Auto electrical services", "Fuel injector testing and cleaning", "Panel beating", "Spray painting", "Accident repairs", "Fleet maintenance", "Vehicle parts supply"],
+        openingHoursSpecification: [
+          { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "07:30", closes: "17:30" },
+          { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "08:00", closes: "13:00" },
+        ],
+        sameAs: [],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/#faq`,
+        mainEntity: [
+          { "@type": "Question", name: "Do you service brands other than VW and Audi?", acceptedAnswer: { "@type": "Answer", text: "Yes — while VW and Audi are our specialisation, we service all makes and models including BMW, Mercedes-Benz, Toyota, Ford, Nissan, Mazda, Isuzu, Hyundai, Kia and Land Rover." } },
+          { "@type": "Question", name: "Can you handle insurance-approved accident repairs?", acceptedAnswer: { "@type": "Answer", text: "Yes, our panel and paint shop carries out accident repairs to insurer-recognised standards, including chassis straightening." } },
+          { "@type": "Question", name: "Do you offer breakdown assistance?", acceptedAnswer: { "@type": "Answer", text: "Yes, including on-site repairs for fleet and construction equipment. Use the emergency breakdown button on this site or call us directly." } },
+          { "@type": "Question", name: "How do I set up a corporate fleet contract?", acceptedAnswer: { "@type": "Answer", text: "Submit a request via the fleet proposal form or contact us directly — we'll design a scheduled maintenance programme around your fleet size and operations." } },
+          { "@type": "Question", name: "Can I track the progress of my vehicle's repair?", acceptedAnswer: { "@type": "Answer", text: "A customer portal for live service tracking is in development. In the meantime, our service desk provides WhatsApp progress updates." } },
+          { "@type": "Question", name: "Are you a registered automotive business?", acceptedAnswer: { "@type": "Answer", text: "Yes — Monos VW-Audi Service & Parts (Pvt) Ltd is a registered member of the Motor Industry Association of Zimbabwe, established in 2016." } },
+        ],
+      },
     ],
-    sameAs: [],
   };
 
   return <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}><body className="bg-black text-offwhite font-body antialiased"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />{children}</body></html>;
