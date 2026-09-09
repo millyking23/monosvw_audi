@@ -14,7 +14,6 @@ export default function Footer() {
               Premium automotive engineering for every make and model, based in Bulawayo, Zimbabwe. Est. 2016.
             </p>
             <div className="social-row flex gap-3 mt-5">
-              <a href="#" aria-label="Facebook">f</a>
               <a href="https://wa.me/263712579531" aria-label="WhatsApp">&#128172;</a>
               <a href="#contact" aria-label="Location">&#128205;</a>
             </div>
@@ -32,10 +31,10 @@ export default function Footer() {
           <div>
             <h5 className="font-mono-tag text-[0.68rem] tracking-wider uppercase text-silver-dim mb-5">Company</h5>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-sm text-silver hover:text-white">Careers</a></li>
-              <li><a href="#" className="text-sm text-silver hover:text-white">Company Profile (PDF)</a></li>
-              <li><a href="#" className="text-sm text-silver hover:text-white">Privacy Policy</a></li>
-              <li><a href="#" className="text-sm text-silver hover:text-white">Terms of Service</a></li>
+              <li><a href="#about" className="text-sm text-silver hover:text-white">About Monos</a></li>
+              <li><a href="#services" className="text-sm text-silver hover:text-white">Our Services</a></li>
+              <li><a href="#fleet" className="text-sm text-silver hover:text-white">Fleet Services</a></li>
+              <li><a href="#contact" className="text-sm text-silver hover:text-white">Request a Service</a></li>
             </ul>
           </div>
           <div>
