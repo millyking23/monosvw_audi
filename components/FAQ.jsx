@@ -8,7 +8,7 @@ const FAQS = [
   { q: "Do you offer breakdown assistance?", a: "Yes, including on-site repairs for fleet and construction equipment. Use the emergency breakdown button on this site or call us directly." },
   { q: "How do I set up a corporate fleet contract?", a: "Submit a request via the fleet proposal form or contact us directly — we'll design a scheduled maintenance programme around your fleet size and operations." },
   { q: "Can I track the progress of my vehicle's repair?", a: "A customer portal for live service tracking is in development. In the meantime, our service desk provides WhatsApp progress updates." },
-  { q: "Are you a registered automotive business?", a: "Yes — Monos VW-Audi Service & Parts (Pvt) Ltd is a registered member of the Motor Industry Association of Zimbabwe, established in 2016." },
+  { q: "Are you an established automotive business?", a: "Yes — Monos VW-Audi Service & Parts (Pvt) Ltd was established in Bulawayo in 2016 and provides vehicle servicing, repairs, diagnostics, bodywork, parts and fleet support." },
 ];
 
 export default function FAQ() {
