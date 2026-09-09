@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const FAQS = [
   { q: "Do you service brands other than VW and Audi?", a: "Yes — while VW and Audi are our specialisation, we service all makes and models including BMW, Mercedes-Benz, Toyota, Ford, Nissan, Mazda, Isuzu, Hyundai, Kia and Land Rover." },
-  { q: "Can you handle insurance-approved accident repairs?", a: "Yes, our panel and paint shop carries out accident repairs to insurer-recognised standards, including chassis straightening." },
+  { q: "Can you handle accident repairs?", a: "Yes, our panel and paint shop carries out accident repairs, including chassis straightening and careful body and paint finishing." },
   { q: "Do you offer breakdown assistance?", a: "Yes, including on-site repairs for fleet and construction equipment. Use the emergency breakdown button on this site or call us directly." },
   { q: "How do I set up a corporate fleet contract?", a: "Submit a request via the fleet proposal form or contact us directly — we'll design a scheduled maintenance programme around your fleet size and operations." },
   { q: "Can I track the progress of my vehicle's repair?", a: "A customer portal for live service tracking is in development. In the meantime, our service desk provides WhatsApp progress updates." },
