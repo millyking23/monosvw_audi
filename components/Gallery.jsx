@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "./Reveal";
+import PHOTOS from "@/data/workshopPhotos";
 
 const CATEGORIES = [
   "All",
@@ -11,33 +12,6 @@ const CATEGORIES = [
   "Diagnostics",
   "Fleet & Commercial",
   "Workshop",
-];
-
-const PHOTOS = [
-  { src: "/images/panel-repair.jpg", title: "Panel Repair", category: "Panel & Paint", description: "Panel and body repair work carried out in the Monos workshop.", service: "/services/panel-beating-spray-painting" },
-  { src: "/images/completed-project.jpg", title: "Completed Bodywork", category: "Panel & Paint", description: "Completed vehicle bodywork and finishing project.", service: "/services/panel-beating-spray-painting" },
-  { src: "/images/diagnostics-cluster.jpg", title: "Computer Diagnostics", category: "Diagnostics", description: "Vehicle diagnostics and fault-finding work.", service: "/services/computer-diagnostics" },
-  { src: "/images/back-workshop.jpeg", title: "Workshop Floor", category: "Workshop", description: "The Monos workshop environment where vehicles are inspected and repaired.", service: "/services/car-workshop-mechanical-repairs" },
-  { src: "/images/customer-dmax.jpg", title: "Isuzu D-Max Service", category: "Fleet & Commercial", description: "A customer D-Max being handled by the Monos workshop team.", service: "/services/fleet-maintenance" },
-  { src: "/images/fleet-truck.jpg", title: "Fleet Vehicle Support", category: "Fleet & Commercial", description: "Fleet and commercial vehicle support at Monos.", service: "/services/fleet-maintenance" },
-  ...[
-    "vehicles-in-service.jpeg",
-    "vehicles-in-service-2.jpg",
-    "vehicles-in-service-3.jpg",
-    "vehicles-in-service-4.jpg",
-    "vehicles-in-service-5.jpeg",
-    "vehicles-in-service-6.jpeg",
-    "vehicles-in-service-7.jpeg",
-    "vehicles-in-service-8.jpg",
-    "vehicles-in-service-9.jpeg",
-    "vehicles-in-service-10.jpeg",
-  ].map((src, index) => ({
-    src: `/images/${src}`,
-    title: `Vehicle Service — ${String(index + 1).padStart(2, "0")}`,
-    category: "Mechanical & Service",
-    description: "Vehicle servicing and mechanical work at the Monos workshop.",
-    service: "/services/car-workshop-mechanical-repairs",
-  })),
 ];
 
 export default function Gallery() {
