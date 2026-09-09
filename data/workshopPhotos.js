@@ -66,6 +66,18 @@ const workshopPhotos = [
     service: "/services/car-workshop-mechanical-repairs",
     reviewStatus: "needs-visual-review",
   })),
+  ...[
+    "vehicles-in-service-5.jpg",
+    "workshop-about.jpg",
+    "workshop-hero.jpg",
+  ].map((src) => ({
+    src: `/images/${src}`,
+    title: "Workshop Photo — Review",
+    category: "Workshop",
+    description: "Workshop photo awaiting visual classification. No specific service claim is made for this image.",
+    service: "/services/car-workshop-mechanical-repairs",
+    reviewStatus: "needs-visual-review",
+  })),
 ];
 
 export default workshopPhotos;
