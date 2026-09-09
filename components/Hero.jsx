@@ -34,8 +34,8 @@ export default function Hero() {
         </div>
 
         <h1
-          className="font-display font-semibold text-white max-w-[15ch]"
-          style={{ fontSize: "clamp(2.6rem,7vw,5.6rem)", lineHeight: 1.05, textShadow: "0 4px 40px rgba(0,0,0,.5)" }}
+          className="font-display font-semibold text-white max-w-[17ch]"
+          style={{ fontSize: "clamp(2.15rem,5.2vw,4.5rem)", lineHeight: 1.07, textShadow: "0 4px 40px rgba(0,0,0,.5)" }}
         >
           VW &amp; Audi Car Service,
           <br />
