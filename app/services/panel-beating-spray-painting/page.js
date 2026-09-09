@@ -4,6 +4,19 @@ export const metadata = {
   title: "Panel Beating & Spray Painting in Bulawayo | Monos",
   description: "Panel beating, dent repairs, accident repairs and professional spray painting in Bulawayo. Monos handles vehicle bodywork and refinishing for all makes and models.",
   alternates: { canonical: `${SITE_URL}/services/panel-beating-spray-painting` },
+  openGraph: {
+    title: "Panel Beating & Spray Painting in Bulawayo | Monos",
+    description: "Panel beating, accident repairs and professional spray painting for all makes and models in Bulawayo.",
+    url: `${SITE_URL}/services/panel-beating-spray-painting`,
+    siteName: "Monos VW-Audi Service & Parts",
+    locale: "en_ZW",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Panel Beating & Spray Painting in Bulawayo | Monos",
+    description: "Panel beating, accident repairs and professional spray painting in Bulawayo.",
+  },
 };
 
 export default function Page() {
