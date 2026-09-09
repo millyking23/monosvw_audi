@@ -22,7 +22,7 @@ export default function BeforeAfter() {
             Before &amp; after. Move the slider.
           </h2>
           <p className="mt-4 text-silver">
-            Drag the handle left to reveal more of the finished D-Max. Drag it right to reveal more of the vehicle before the work.
+            Move the handle left to reveal more of the finished D-Max. Move it right to reveal more of the vehicle before the work.
           </p>
         </div>
 
@@ -48,31 +48,29 @@ export default function BeforeAfter() {
               if (event.key === "ArrowRight") setPosition((value) => clamp(value + 5));
             }}
           >
-            {/* BEFORE stays underneath. Moving the handle right exposes more BEFORE. */}
+            {/* BEFORE is the full base image. Right side is revealed as the handle moves right. */}
             <Image
               src="/images/completed-project.jpg"
               alt="D-Max before bodywork and paint work at Monos"
               fill
-              sizes="(max-width: 768px) 100vw, 900px"
+              sizes="(max-width: 768px) 100vw, 1024px"
               priority
               style={{ objectFit: "cover" }}
             />
 
-            {/* AFTER covers the left side. Moving the handle left exposes more AFTER. */}
+            {/* AFTER is clipped to the left. Moving the handle left reveals more AFTER. */}
             <div
-              className="absolute inset-y-0 left-0 overflow-hidden"
-              style={{ width: `${100 - position}%` }}
+              className="absolute inset-0 overflow-hidden"
+              style={{ clipPath: `inset(0 ${position}% 0 0)` }}
               aria-hidden="true"
             >
-              <div className="relative h-full w-[100vw] max-w-5xl">
-                <Image
-                  src="/images/customer-dmax.jpg"
-                  alt="Completed D-Max bodywork and paint result at Monos"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 900px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
+              <Image
+                src="/images/customer-dmax.jpg"
+                alt="Completed D-Max bodywork and paint result at Monos"
+                fill
+                sizes="(max-width: 768px) 100vw, 1024px"
+                style={{ objectFit: "cover" }}
+              />
             </div>
 
             <span className="absolute top-5 left-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
@@ -98,7 +96,7 @@ export default function BeforeAfter() {
             <p className="font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-silver-dim">
               D-Max • Panel &amp; Paint
             </p>
-            <p className="text-sm text-silver">← Move left for AFTER · Move right for BEFORE →</p>
+            <p className="text-sm text-silver">← AFTER · drag left &nbsp;|&nbsp; drag right · BEFORE →</p>
           </div>
         </div>
       </div>
