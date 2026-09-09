@@ -1,148 +1,175 @@
 "use client";
+
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Reveal from "./Reveal";
-const VEHICLE_IMAGES = [
-  "/images/vehicles-in-service.jpeg",
-  "/images/vehicles-in-service-2.jpg",
-  "/images/vehicles-in-service-3.jpg",
-  "/images/vehicles-in-service-4.jpg",
-  "/images/vehicles-in-service-5.jpeg",
-  "/images/vehicles-in-service-6.jpeg",
-  "/images/vehicles-in-service-7.jpeg",
-  "/images/vehicles-in-service-8.jpg",
-  "/images/vehicles-in-service-9.jpeg",
-  "/images/vehicles-in-service-10.jpeg",
+
+const CATEGORIES = [
+  "All",
+  "Panel & Paint",
+  "Mechanical & Service",
+  "Diagnostics",
+  "Fleet & Commercial",
+  "Workshop",
 ];
-const ITEMS = [
-  {
-    src: "/images/diagnostics-cluster.jpg",
-    tag: "Live Diagnostics Readout",
-  },
-  {
-    src: "/images/panel-repair.jpg",
-    tag: "Panel & Body Repair — Audi",
-  },
-  {
-    type: "vehicles",
-    tag: "Vehicles In Service",
-  },
-  {
-    src: "/images/back-workshop.jpeg",
-    tag: "Back Workshop Area",
-  },
-  {
-    src: "/images/customer-dmax.jpg",
-    tag: "Customer Vehicle — Isuzu D-Max",
-  },
-  {
-    src: "/images/fleet-truck.jpg",
-    tag: "Fleet Vehicle Ready For Dispatch",
-  },
+
+const PHOTOS = [
+  { src: "/images/panel-repair.jpg", title: "Panel & Body Repair", category: "Panel & Paint", description: "Bodywork and panel repair in the Monos workshop." },
+  { src: "/images/completed-project.jpg", title: "Completed Bodywork", category: "Panel & Paint", description: "Completed repair and finishing work." },
+  { src: "/images/diagnostics-cluster.jpg", title: "Computer Diagnostics", category: "Diagnostics", description: "Vehicle diagnostics and fault-finding." },
+  { src: "/images/back-workshop.jpeg", title: "Workshop Floor", category: "Workshop", description: "Inside the Monos workshop." },
+  { src: "/images/customer-dmax.jpg", title: "Customer Vehicle", category: "Fleet & Commercial", description: "Customer vehicle being handled by the workshop team." },
+  { src: "/images/fleet-truck.jpg", title: "Fleet Vehicle", category: "Fleet & Commercial", description: "Fleet and commercial vehicle support." },
+  ...[
+    "vehicles-in-service.jpeg",
+    "vehicles-in-service-2.jpg",
+    "vehicles-in-service-3.jpg",
+    "vehicles-in-service-4.jpg",
+    "vehicles-in-service-5.jpeg",
+    "vehicles-in-service-6.jpeg",
+    "vehicles-in-service-7.jpeg",
+    "vehicles-in-service-8.jpg",
+    "vehicles-in-service-9.jpeg",
+    "vehicles-in-service-10.jpeg",
+  ].map((src, index) => ({
+    src: `/images/${src}`,
+    title: `Vehicle Service — ${String(index + 1).padStart(2, "0")}`,
+    category: "Mechanical & Service",
+    description: "Vehicle servicing and mechanical work at Monos.",
+  })),
 ];
-function VehicleGallery() {
-  const [current, setCurrent] = useState(0);
-  const previousImage = () => {
-    setCurrent((prev) =>
-      prev === 0 ? VEHICLE_IMAGES.length - 1 : prev - 1
-    );
-  };
-  const nextImage = () => {
-    setCurrent((prev) =>
-      prev === VEHICLE_IMAGES.length - 1 ? 0 : prev + 1
-    );
-  };
-  return (
-    <div className="gallery-item">
-      <Image
-        src={VEHICLE_IMAGES[current]}
-      alt="Vehicles In Service"
-        fill
-        sizes="(max-width: 640px) 50vw, 260px"
-        style={{ objectFit: "cover" }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-      <div className="tag">
-        <div className="flex items-center justify-between gap-3">
-          <span>Vehicles In Service</span>
-          <span className="opacity-80">
-            {current + 1} / {VEHICLE_IMAGES.length}
-          </span>
-        </div>
-      </div>
-      <button
-        type="button"
-        onClick={previousImage}
-        aria-label="Previous vehicle image"
-        className="absolute left-3 top-1/2 z-10 -translate-y-1/2 w-9 h-9 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/20 hover:bg-red-600 transition"
-      >
-        ‹
-      </button>
-      <button
-        type="button"
-        onClick={nextImage}
-        aria-label="Next vehicle image"
-        className="absolute right-3 top-1/2 z-10 -translate-y-1/2 w-9 h-9 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/20 hover:bg-red-600 transition"
-      >
-        ›
-      </button>
-      <div className="absolute bottom-12 left-1/2 z-10 -translate-x-1/2 flex gap-1.5">
-        {VEHICLE_IMAGES.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() => setCurrent(index)}
-           aria-label="Go to vehicle image"
-            className={`w-2 h-2 rounded-full transition ${
-              index === current
-                ? "bg-white scale-125"
-                : "bg-white/40"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
+
 export default function Gallery() {
+  const [category, setCategory] = useState("All");
+  const [selected, setSelected] = useState(null);
+
+  const filtered = useMemo(
+    () => category === "All" ? PHOTOS : PHOTOS.filter((photo) => photo.category === category),
+    [category]
+  );
+
+  useEffect(() => {
+    if (!selected) return undefined;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setSelected(null);
+      if (event.key === "ArrowRight") {
+        setSelected((current) => {
+          if (!current) return current;
+          const index = filtered.findIndex((photo) => photo.src === current.src);
+          return filtered[(index + 1) % filtered.length];
+        });
+      }
+      if (event.key === "ArrowLeft") {
+        setSelected((current) => {
+          if (!current) return current;
+          const index = filtered.findIndex((photo) => photo.src === current.src);
+          return filtered[(index - 1 + filtered.length) % filtered.length];
+        });
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [selected, filtered]);
+
   return (
-    <section
-      id="gallery"
-      className="section-pad bg-charcoal-2 border-y border-white/[0.08]"
-    >
+    <section id="gallery" className="section-pad bg-charcoal-2 border-y border-white/[0.08]">
       <div className="wrap">
-        <div className="max-w-[640px] mb-16">
-          <div className="eyebrow">Inside The Workshop</div>
-          <h2
-            className="font-display font-semibold text-white"
-            style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}
-          >
-            Gallery
+        <div className="max-w-[760px] mb-10">
+          <div className="eyebrow">Monos Workshop Portfolio</div>
+          <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
+            See the work. Grouped by what we do.
           </h2>
+          <p className="mt-4 text-silver">
+            Browse real workshop photos by service area — panel beating and paint, mechanical work, diagnostics, fleet vehicles and the workshop itself. Tap any image to view it full screen.
+          </p>
         </div>
+
+        <div className="flex flex-wrap gap-2 mb-10" role="tablist" aria-label="Workshop photo categories">
+          {CATEGORIES.map((item) => (
+            <button
+              key={item}
+              type="button"
+              role="tab"
+              aria-selected={category === item}
+              onClick={() => { setCategory(item); setSelected(null); }}
+              className={`tab-btn ${category === item ? "active" : ""}`}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <p className="font-mono-tag text-[0.68rem] tracking-[0.12em] uppercase text-silver-dim">
+            {filtered.length} {filtered.length === 1 ? "photo" : "photos"} · {category}
+          </p>
+          <a href="#book" className="text-sm font-semibold text-white hover:text-red-400 transition-colors">
+            Need this work? Book Monos →
+          </a>
+        </div>
+
         <div className="gallery-grid">
-          {ITEMS.map((item) => (
-            <Reveal key={item.type || item.src}>
-              {item.type === "vehicles" ? (
-                <VehicleGallery />
-              ) : (
-                <div className="gallery-item">
-                  <Image
-                    src={item.src}
-                    alt={item.tag}
-                    fill
-                    sizes="(max-width: 640px) 50vw, 260px"
-                    style={{ objectFit: "cover" }}
-                  />
-                  <div className="tag">
-                    {item.tag}
-                  </div>
+          {filtered.map((photo, index) => (
+            <Reveal key={photo.src}>
+              <button
+                type="button"
+                className="gallery-item w-full text-left cursor-zoom-in group"
+                onClick={() => setSelected(photo)}
+                aria-label={`View ${photo.title}`}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.title}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 400px"
+                  priority={category === "All" && index < 2}
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                <div className="tag">
+                  <span className="block">{photo.title}</span>
+                  <span className="block mt-1 opacity-70 normal-case tracking-normal font-sans">{photo.category}</span>
                 </div>
-              )}
+              </button>
             </Reveal>
           ))}
         </div>
       </div>
+
+      {selected && (
+        <div
+          className="fixed inset-0 z-[2000] bg-black/95 p-4 sm:p-8 flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.title}
+          onClick={(event) => event.target === event.currentTarget && setSelected(null)}
+        >
+          <button type="button" onClick={() => setSelected(null)} className="absolute top-5 right-5 w-11 h-11 rounded-full border border-white/20 bg-black/60 text-white text-xl" aria-label="Close image">×</button>
+          <button
+            type="button"
+            onClick={() => setSelected((current) => filtered[(filtered.findIndex((photo) => photo.src === current.src) - 1 + filtered.length) % filtered.length])}
+            className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-white/20 bg-black/60 text-white text-2xl"
+            aria-label="Previous image"
+          >‹</button>
+          <div className="relative w-full max-w-5xl h-[78vh]">
+            <Image src={selected.src} alt={selected.title} fill sizes="95vw" style={{ objectFit: "contain" }} />
+          </div>
+          <button
+            type="button"
+            onClick={() => setSelected((current) => filtered[(filtered.findIndex((photo) => photo.src === current.src) + 1) % filtered.length])}
+            className="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-white/20 bg-black/60 text-white text-2xl"
+            aria-label="Next image"
+          >›</button>
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-center max-w-[90vw]">
+            <p className="text-white font-semibold">{selected.title}</p>
+            <p className="text-silver text-sm mt-1">{selected.description}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
