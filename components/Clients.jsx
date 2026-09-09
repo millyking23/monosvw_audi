@@ -1,7 +1,7 @@
 const CLIENTS = [
   "Municipal and Local Authorities",
   "Telecommunications",
-  "Corperate Services",
+  "Corporate Services",
   "C.I.H Industries (Pvt) Ltd",
   "Schools & Educational institutions",
   "Radar Metals",
