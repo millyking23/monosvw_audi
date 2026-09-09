@@ -4,6 +4,19 @@ export const metadata = {
   title: "Car Workshop & Mechanical Repairs in Bulawayo",
   description: "Monos is a Bulawayo car workshop for VW, Audi and other makes and models, offering servicing, mechanical repairs, engine, suspension, gearbox and transmission work.",
   alternates: { canonical: `${SITE_URL}/services/car-workshop-mechanical-repairs` },
+  openGraph: {
+    title: "Car Workshop & Mechanical Repairs in Bulawayo | Monos",
+    description: "Vehicle servicing and mechanical repairs for VW, Audi and other makes and models in Bulawayo.",
+    url: `${SITE_URL}/services/car-workshop-mechanical-repairs`,
+    siteName: "Monos VW-Audi Service & Parts",
+    locale: "en_ZW",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Car Workshop & Mechanical Repairs in Bulawayo | Monos",
+    description: "Vehicle servicing and mechanical repairs for VW, Audi and other makes and models in Bulawayo.",
+  },
 };
 
 export default function Page() {
