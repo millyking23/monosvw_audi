@@ -6,7 +6,6 @@ import Services from "@/components/Services";
 import Marquee from "@/components/Marquee";
 import Fleet from "@/components/Fleet";
 import BeforeAfter from "@/components/BeforeAfter";
-import Gallery from "@/components/Gallery";
 import WorkshopPortfolio from "@/components/WorkshopPortfolio";
 import Clients from "@/components/Clients";
 import BookingSection from "@/components/BookingSection";
@@ -31,7 +30,6 @@ export default function HomePage() {
       <Fleet />
       <BeforeAfter />
       <WorkshopPortfolio />
-      <Gallery />
       <Clients />
       <BookingSection />
       <FleetForm />
