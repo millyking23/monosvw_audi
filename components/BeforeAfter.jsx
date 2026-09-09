@@ -6,6 +6,11 @@ import { useState } from "react";
 export default function BeforeAfter() {
   const [position, setPosition] = useState(50);
 
+  const updatePosition = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setPosition(Math.min(100, Math.max(0, ((event.clientX - rect.left) / rect.width) * 100)));
+  };
+
   return (
     <section className="section-pad">
       <div className="wrap">
@@ -21,16 +26,13 @@ export default function BeforeAfter() {
 
         <div className="mx-auto max-w-5xl">
           <div
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black select-none touch-none"
+            className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black select-none touch-none cursor-ew-resize"
             onPointerDown={(event) => {
               event.currentTarget.setPointerCapture(event.pointerId);
-              const rect = event.currentTarget.getBoundingClientRect();
-              setPosition(Math.min(100, Math.max(0, ((event.clientX - rect.left) / rect.width) * 100)));
+              updatePosition(event);
             }}
             onPointerMove={(event) => {
-              if (event.buttons !== 1) return;
-              const rect = event.currentTarget.getBoundingClientRect();
-              setPosition(Math.min(100, Math.max(0, ((event.clientX - rect.left) / rect.width) * 100)));
+              if (event.buttons === 1) updatePosition(event);
             }}
             role="slider"
             aria-label="Drag to compare D-Max before and after"
@@ -53,19 +55,17 @@ export default function BeforeAfter() {
             />
 
             <div
-              className="absolute inset-y-0 left-0 overflow-hidden"
-              style={{ width: `${position}%` }}
+              className="absolute inset-0 overflow-hidden"
+              style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
               aria-hidden="true"
             >
-              <div className="relative h-full w-[100vw] max-w-5xl">
-                <Image
-                  src="/images/completed-project.jpg"
-                  alt="D-Max before bodywork and paint work at Monos"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 900px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
+              <Image
+                src="/images/completed-project.jpg"
+                alt="D-Max before bodywork and paint work at Monos"
+                fill
+                sizes="(max-width: 768px) 100vw, 900px"
+                style={{ objectFit: "cover" }}
+              />
             </div>
 
             <span className="absolute top-5 left-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
