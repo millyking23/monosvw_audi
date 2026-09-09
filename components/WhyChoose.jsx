@@ -1,13 +1,13 @@
 import Reveal from "./Reveal";
 
 const ITEMS = [
-  { icon: "⚙", title: "Certified Technicians", text: "Factory-trained staff working to documented procedures, not guesswork." },
+  { icon: "⚙", title: "Experienced Technicians", text: "Skilled workshop staff working to documented procedures and practical diagnostic evidence." },
   { icon: "☉", title: "Latest Vehicle Diagnostics", text: "OEM-level diagnostic tooling for accurate fault-finding on modern ECUs." },
   { icon: "⏱", title: "Fast Turnaround", text: "Structured workflows and parts pre-ordering to minimise vehicle downtime." },
   { icon: "⚖", title: "Genuine Parts", text: "Direct sourcing lines for genuine and OEM-equivalent components, worldwide." },
-  { icon: "🛡", title: "Insurance Approved Repairs", text: "Accident and panel work carried out to insurer-recognised standards." },
+  { icon: "🛡", title: "Quality Accident Repairs", text: "Panel and paint work carried out with careful attention to structural and cosmetic finish." },
   { icon: "$", title: "Competitive Pricing", text: "Transparent, itemised quotations — no inflated dealership mark-ups." },
-  { icon: "★", title: "Trusted Since 2016", text: "Registered with the Motor Industry Association of Zimbabwe." },
+  { icon: "★", title: "Trusted Since 2016", text: "An established Bulawayo automotive workshop serving private, commercial and fleet customers." },
   { icon: "🚚", title: "Corporate Fleet Specialists", text: "Scheduled maintenance programmes built for mines, councils and businesses." },
 ];
 
