@@ -97,7 +97,6 @@ friction) — the `TURNSTILE_SECRET_KEY` env var is already reserved for this in
 
 Sourced directly from the Monos company profile:
 - Founded **2016**, Bulawayo, Zimbabwe
-- Registered member of the **Motor Industry Association of Zimbabwe**
 - Motto: *"What is MADE, we can FIX."*
 - Clients referenced: Bulawayo City Council, Econet Wireless, Telecel, C.I.H Industries (Pvt) Ltd,
   Nkulumane High School, Radar Metals, Maco Builders
