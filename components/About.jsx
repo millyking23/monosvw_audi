@@ -29,10 +29,6 @@ export default function About() {
             <p className="italic text-silver-dim">&ldquo;What is MADE, we can FIX.&rdquo;</p>
           </div>
 
-          <div className="client-badge mt-2">
-            &#9878; Registered Member — Motor Industry Association of Zimbabwe
-          </div>
-
           <Reveal>
             <div className="about-photo mt-7">
               <Image
@@ -84,7 +80,7 @@ export default function About() {
             {
               y: "TODAY",
               t: "All-marque engineering, genuine parts sourcing",
-              d: "A registered member of the Motor Industry Association of Zimbabwe, servicing every major brand with worldwide sourcing for genuine and OEM-equivalent parts.",
+              d: "A full-service independent automotive workshop in Bulawayo, servicing major vehicle brands with worldwide sourcing for genuine and OEM-equivalent parts.",
             },
           ].map((item) => (
             <Reveal key={item.t}>
