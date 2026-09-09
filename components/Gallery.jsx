@@ -6,7 +6,6 @@ import Reveal from "./Reveal";
 import PHOTOS from "@/data/workshopPhotos";
 
 const CATEGORIES = [
-  "All",
   "Panel & Paint",
   "Mechanical & Service",
   "Diagnostics",
@@ -15,11 +14,11 @@ const CATEGORIES = [
 ];
 
 export default function Gallery() {
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState(CATEGORIES[0]);
   const [selected, setSelected] = useState(null);
 
   const filtered = useMemo(
-    () => category === "All" ? PHOTOS : PHOTOS.filter((photo) => photo.category === category),
+    () => PHOTOS.filter((photo) => photo.category === category),
     [category]
   );
 
@@ -82,7 +81,7 @@ export default function Gallery() {
           <p className="font-mono-tag text-[0.68rem] tracking-[0.12em] uppercase text-silver-dim">
             {filtered.length} {filtered.length === 1 ? "photo" : "photos"} · {category}
           </p>
-          <a href="#book" className="text-sm font-semibold text-white hover:text-red-400 transition-colors">
+          <a href="/#book" className="text-sm font-semibold text-white hover:text-red-400 transition-colors">
             Need this work? Book Monos →
           </a>
         </div>
@@ -101,7 +100,7 @@ export default function Gallery() {
                   alt={photo.title}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 400px"
-                  priority={category === "All" && index < 2}
+                  priority={index < 2}
                   style={{ objectFit: "cover" }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
