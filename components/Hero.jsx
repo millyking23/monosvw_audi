@@ -45,8 +45,16 @@ function Counter({ target, suffix = "" }) {
 export default function Hero() {
   return (
     <section id="top" className="relative min-h-screen flex items-end pb-24 overflow-hidden bg-black">
-      <div className="hero-bg" />
-      <div className="hero-grid" />
+      <Image
+        src="/images/workshop-hero.jpg"
+        alt="Monos VW-Audi Service & Parts vehicle workshop in Bulawayo"
+        fill
+        priority
+        sizes="100vw"
+        className="hero-image"
+      />
+      <div className="hero-bg" aria-hidden="true" />
+      <div className="hero-grid" aria-hidden="true" />
       <div className="relative z-10 max-w-wrap mx-auto px-8 w-full">
         <div className="hero-badge">
           <Image src="/images/logo-lockup.jpg" alt="Monos VW-Audi Service & Parts" width={190} height={64} style={{ height: 26, width: "auto" }} />
