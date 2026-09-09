@@ -3,12 +3,14 @@
 import Image from "next/image";
 import { useState } from "react";
 
+const clamp = (value) => Math.min(100, Math.max(0, value));
+
 export default function BeforeAfter() {
   const [position, setPosition] = useState(50);
 
-  const updatePosition = (event) => {
+  const updateFromPointer = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    setPosition(Math.min(100, Math.max(0, ((event.clientX - rect.left) / rect.width) * 100)));
+    setPosition(clamp(((event.clientX - rect.left) / rect.width) * 100));
   };
 
   return (
@@ -17,10 +19,10 @@ export default function BeforeAfter() {
         <div className="max-w-[760px] mx-auto text-center mb-12">
           <div className="eyebrow center">Panel &amp; Paint</div>
           <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
-            See the transformation. Swipe to compare.
+            Before &amp; after. Move the slider.
           </h2>
           <p className="mt-4 text-silver">
-            Compare the D-Max before and after its bodywork and paint work. Drag the slider to reveal the finished result.
+            Drag the handle left to reveal more of the finished D-Max. Drag it right to reveal more of the vehicle before the work.
           </p>
         </div>
 
@@ -29,10 +31,11 @@ export default function BeforeAfter() {
             className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black select-none touch-none cursor-ew-resize"
             onPointerDown={(event) => {
               event.currentTarget.setPointerCapture(event.pointerId);
-              updatePosition(event);
+              updateFromPointer(event);
             }}
             onPointerMove={(event) => {
-              if (event.buttons === 1) updatePosition(event);
+              if (event.buttons !== 1) return;
+              updateFromPointer(event);
             }}
             role="slider"
             aria-label="Drag to compare D-Max before and after"
@@ -41,38 +44,42 @@ export default function BeforeAfter() {
             aria-valuenow={Math.round(position)}
             tabIndex={0}
             onKeyDown={(event) => {
-              if (event.key === "ArrowLeft") setPosition((value) => Math.max(0, value - 5));
-              if (event.key === "ArrowRight") setPosition((value) => Math.min(100, value + 5));
+              if (event.key === "ArrowLeft") setPosition((value) => clamp(value - 5));
+              if (event.key === "ArrowRight") setPosition((value) => clamp(value + 5));
             }}
           >
+            {/* BEFORE stays underneath. Moving the handle right exposes more BEFORE. */}
             <Image
-              src="/images/customer-dmax.jpg"
-              alt="Completed D-Max bodywork and paint result at Monos"
+              src="/images/completed-project.jpg"
+              alt="D-Max before bodywork and paint work at Monos"
               fill
               sizes="(max-width: 768px) 100vw, 900px"
               priority
               style={{ objectFit: "cover" }}
             />
 
+            {/* AFTER covers the left side. Moving the handle left exposes more AFTER. */}
             <div
-              className="absolute inset-0 overflow-hidden"
-              style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+              className="absolute inset-y-0 left-0 overflow-hidden"
+              style={{ width: `${100 - position}%` }}
               aria-hidden="true"
             >
-              <Image
-                src="/images/completed-project.jpg"
-                alt="D-Max before bodywork and paint work at Monos"
-                fill
-                sizes="(max-width: 768px) 100vw, 900px"
-                style={{ objectFit: "cover" }}
-              />
+              <div className="relative h-full w-[100vw] max-w-5xl">
+                <Image
+                  src="/images/customer-dmax.jpg"
+                  alt="Completed D-Max bodywork and paint result at Monos"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 900px"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
             </div>
 
             <span className="absolute top-5 left-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
-              Before
+              After
             </span>
             <span className="absolute top-5 right-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
-              After
+              Before
             </span>
 
             <div
@@ -91,7 +98,7 @@ export default function BeforeAfter() {
             <p className="font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-silver-dim">
               D-Max • Panel &amp; Paint
             </p>
-            <p className="text-sm text-silver">Drag the handle left or right to compare.</p>
+            <p className="text-sm text-silver">← Move left for AFTER · Move right for BEFORE →</p>
           </div>
         </div>
       </div>
