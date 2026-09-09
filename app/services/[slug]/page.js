@@ -45,6 +45,16 @@ const services = {
   }
 };
 
+const relatedServices = [
+  ["vw-service-repairs", "VW Service & Repairs"],
+  ["audi-service-repairs", "Audi Service & Repairs"],
+  ["computer-diagnostics", "Computer Diagnostics"],
+  ["fuel-injector-testing-cleaning", "Fuel Injector Testing & Cleaning"],
+  ["panel-beating-spray-painting", "Panel Beating & Spray Painting"],
+  ["fleet-maintenance", "Fleet Vehicle Maintenance"],
+  ["car-workshop-mechanical-repairs", "Car Workshop & Mechanical Repairs"]
+];
+
 export function generateStaticParams() {
   return Object.keys(services).map((slug) => ({ slug }));
 }
@@ -98,6 +108,19 @@ export default async function ServicePage({ params }) {
           <h2 className="text-2xl font-bold sm:text-3xl">What we can help with</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {service.points.map((point) => <div key={point} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">{point}</div>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <h2 className="text-2xl font-bold sm:text-3xl">Related Monos services</h2>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedServices.filter(([serviceSlug]) => serviceSlug !== slug).map(([serviceSlug, label]) => (
+              <a key={serviceSlug} href={`/services/${serviceSlug}`} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 font-semibold transition hover:bg-white/[0.07]">
+                {label} →
+              </a>
+            ))}
           </div>
         </div>
       </section>
