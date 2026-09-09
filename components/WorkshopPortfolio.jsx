@@ -80,13 +80,8 @@ export default function WorkshopPortfolio() {
             <p className="font-semibold text-white">Want to see more?</p>
             <p className="mt-1 text-sm text-silver">Browse the full workshop photo gallery by service area.</p>
           </div>
-          <a
-            href="/gallery"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-ghost btn-sm"
-          >
-            Open full gallery ↗
+          <a href="/gallery" className="btn btn-ghost btn-sm">
+            Open full gallery →
           </a>
         </div>
       </div>
