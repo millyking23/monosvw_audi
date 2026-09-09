@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
         "@id": `${SITE_URL}/#faq`,
         mainEntity: [
           { "@type": "Question", name: "Do you service brands other than VW and Audi?", acceptedAnswer: { "@type": "Answer", text: "Yes — while VW and Audi are our specialisation, we service all makes and models including BMW, Mercedes-Benz, Toyota, Ford, Nissan, Mazda, Isuzu, Hyundai, Kia and Land Rover." } },
-          { "@type": "Question", name: "Can you handle insurance-approved accident repairs?", acceptedAnswer: { "@type": "Answer", text: "Yes, our panel and paint shop carries out accident repairs, including chassis straightening." } },
+          { "@type": "Question", name: "Can you handle accident repairs?", acceptedAnswer: { "@type": "Answer", text: "Yes, our panel and paint shop carries out accident repairs, including chassis straightening and careful body and paint finishing." } },
           { "@type": "Question", name: "Do you offer breakdown assistance?", acceptedAnswer: { "@type": "Answer", text: "Yes, including on-site repairs for fleet and construction equipment. Use the emergency breakdown button on this site or call us directly." } },
           { "@type": "Question", name: "How do I set up a corporate fleet contract?", acceptedAnswer: { "@type": "Answer", text: "Submit a request via the fleet proposal form or contact us directly — we'll design a scheduled maintenance programme around your fleet size and operations." } },
           { "@type": "Question", name: "Can I track the progress of my vehicle's repair?", acceptedAnswer: { "@type": "Answer", text: "A customer portal for live service tracking is in development. In the meantime, our service desk provides WhatsApp progress updates." } },
