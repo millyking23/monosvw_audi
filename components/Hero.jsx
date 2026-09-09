@@ -64,7 +64,7 @@ export default function Hero() {
         >
           VW &amp; Audi Car Service,
           <br />
-          <span className="text-red">Repairs &amp; Diagnostics.</span>
+          <span className="text-red">Repairs &amp; Diagnostics in Bulawayo.</span>
         </h1>
 
         <p className="mt-6 max-w-[600px] text-lg leading-relaxed text-silver">
