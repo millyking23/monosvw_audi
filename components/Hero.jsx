@@ -1,46 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-function Counter({ target, suffix = "" }) {
-  const ref = useRef(null);
-  const [value, setValue] = useState(target);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            let cur = 0;
-            const step = Math.max(1, Math.ceil(target / 60));
-            const t = setInterval(() => {
-              cur += step;
-              if (cur >= target) {
-                cur = target;
-                clearInterval(t);
-              }
-              setValue(cur);
-            }, 20);
-            obs.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [target]);
-
-  return (
-    <b ref={ref} className="block font-display text-3xl font-bold text-white" aria-label={`${target}${suffix}`}>
-      {value.toLocaleString()}
-      {suffix}
-    </b>
-  );
-}
+const TRUST_POINTS = [
+  ["2016", "Established in Bulawayo"],
+  ["VW · AUDI", "Specialist focus"],
+  ["ALL MAKES", "Vehicle servicing & repairs"],
+  ["LOCAL", "Donnington workshop"],
+];
 
 export default function Hero() {
   return (
@@ -89,22 +56,12 @@ export default function Hero() {
         </div>
 
         <div className="hero-stats">
-          <div>
-            <Counter target={2016} />
-            <span className="font-mono-tag text-[0.66rem] tracking-wider uppercase text-silver-dim">Founded In</span>
-          </div>
-          <div>
-            <Counter target={4200} />
-            <span className="font-mono-tag text-[0.66rem] tracking-wider uppercase text-silver-dim">Vehicles Serviced</span>
-          </div>
-          <div>
-            <Counter target={60} />
-            <span className="font-mono-tag text-[0.66rem] tracking-wider uppercase text-silver-dim">Corporate Fleet Clients</span>
-          </div>
-          <div>
-            <Counter target={95} suffix="%" />
-            <span className="font-mono-tag text-[0.66rem] tracking-wider uppercase text-silver-dim">Genuine Parts</span>
-          </div>
+          {TRUST_POINTS.map(([value, label]) => (
+            <div key={label}>
+              <b className="block font-display text-2xl sm:text-3xl font-bold text-white">{value}</b>
+              <span className="font-mono-tag text-[0.66rem] tracking-wider uppercase text-silver-dim">{label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
