@@ -23,14 +23,6 @@ const workshopPhotos = [
     service: "/services/car-workshop-mechanical-repairs",
     reviewStatus: "needs-visual-review",
   },
-  {
-    src: "/images/fleet-truck.jpg",
-    title: "Panel & Paint Vehicle",
-    category: "Panel & Paint",
-    description: "Vehicle photographed as part of Monos workshop bodywork and paint portfolio.",
-    service: "/services/panel-beating-spray-painting",
-    reviewStatus: "needs-visual-review",
-  },
   ...[
     "vehicles-in-service-2.jpg",
     "vehicles-in-service-3.jpg",
@@ -49,14 +41,6 @@ const workshopPhotos = [
     service: "/services/car-workshop-mechanical-repairs",
     reviewStatus: "needs-visual-review",
   })),
-  {
-    src: "/images/vehicles-in-service.jpeg",
-    title: "Panel & Paint Vehicle",
-    category: "Panel & Paint",
-    description: "Vehicle photographed as part of Monos workshop bodywork and paint portfolio.",
-    service: "/services/panel-beating-spray-painting",
-    reviewStatus: "needs-visual-review",
-  },
   ...[
     "vehicles-in-service-5.jpg",
     "workshop-about.jpg",
