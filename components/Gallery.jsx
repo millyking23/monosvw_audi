@@ -78,12 +78,6 @@ export default function Gallery() {
           ))}
         </div>
 
-        {category === "Panel & Paint" && (
-          <div className="mb-12">
-            <BeforeAfter />
-          </div>
-        )}
-
         <div className="mb-6 flex items-center justify-between gap-4">
           <p className="font-mono-tag text-[0.68rem] tracking-[0.12em] uppercase text-silver-dim">
             {filtered.length} {filtered.length === 1 ? "photo" : "photos"} · {category}
@@ -94,6 +88,8 @@ export default function Gallery() {
         </div>
 
         <div className="gallery-grid">
+          {category === "Panel & Paint" && <BeforeAfter embedded />}
+
           {filtered.map((photo, index) => (
             <Reveal key={photo.src}>
               <button
