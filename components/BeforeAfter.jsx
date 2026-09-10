@@ -15,7 +15,7 @@ export default function BeforeAfter({ embedded = false }) {
 
   const comparison = (
     <div
-      className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black select-none touch-none cursor-ew-resize"
+      className={`relative overflow-hidden select-none touch-none cursor-ew-resize ${embedded ? "absolute inset-0 h-full w-full rounded-none border-0" : "aspect-[4/3] rounded-2xl border border-white/10 bg-black"}`}
       onPointerDown={(event) => {
         event.currentTarget.setPointerCapture(event.pointerId);
         updateFromPointer(event);
@@ -80,13 +80,13 @@ export default function BeforeAfter({ embedded = false }) {
 
   if (embedded) {
     return (
-      <RevealCard>
+      <div className="gallery-item w-full group">
         {comparison}
-        <div className="px-5 py-4">
-          <h3 className="font-display text-lg font-semibold text-white">Isuzu Before &amp; After</h3>
-          <p className="mt-2 text-sm text-silver">Panel &amp; Paint · drag left for after, right for before.</p>
+        <div className="tag">
+          <span className="block">Isuzu Before &amp; After</span>
+          <span className="block mt-1 opacity-70 normal-case tracking-normal font-sans">Panel &amp; Paint · drag left for after, right for before</span>
         </div>
-      </RevealCard>
+      </div>
     );
   }
 
@@ -110,8 +110,4 @@ export default function BeforeAfter({ embedded = false }) {
       </div>
     </section>
   );
-}
-
-function RevealCard({ children }) {
-  return <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] h-full">{children}</div>;
 }
