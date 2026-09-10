@@ -14,90 +14,86 @@ export default function BeforeAfter() {
   };
 
   return (
-    <section className="section-pad">
-      <div className="wrap">
-        <div className="max-w-[760px] mx-auto text-center mb-12">
+    <section className="border-b border-white/10">
+      <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+        <div className="max-w-[760px] mx-auto text-center mb-10">
           <div className="eyebrow center">Panel &amp; Paint</div>
           <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
-            Before &amp; after. Move the slider.
+            Isuzu before &amp; after
           </h2>
           <p className="mt-4 text-silver">
-            Move the handle left to reveal more of the finished D-Max. Move it right to reveal more of the vehicle before the work.
+            Drag the handle left to reveal more of the finished Isuzu. Drag it right to reveal more of the vehicle before the bodywork.
           </p>
         </div>
 
-        <div className="mx-auto max-w-5xl">
+        <div
+          className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black select-none touch-none cursor-ew-resize"
+          onPointerDown={(event) => {
+            event.currentTarget.setPointerCapture(event.pointerId);
+            updateFromPointer(event);
+          }}
+          onPointerMove={(event) => {
+            if (event.buttons !== 1) return;
+            updateFromPointer(event);
+          }}
+          role="slider"
+          aria-label="Drag to compare Isuzu before and after bodywork"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(position)}
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "ArrowLeft") setPosition((value) => clamp(value - 5));
+            if (event.key === "ArrowRight") setPosition((value) => clamp(value + 5));
+          }}
+        >
+          <Image
+            src="/images/completed-project.jpg"
+            alt="Isuzu before panel beating and spray painting at Monos"
+            fill
+            sizes="(max-width: 768px) 100vw, 1024px"
+            priority
+            style={{ objectFit: "cover" }}
+          />
+
           <div
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black select-none touch-none cursor-ew-resize"
-            onPointerDown={(event) => {
-              event.currentTarget.setPointerCapture(event.pointerId);
-              updateFromPointer(event);
-            }}
-            onPointerMove={(event) => {
-              if (event.buttons !== 1) return;
-              updateFromPointer(event);
-            }}
-            role="slider"
-            aria-label="Drag to compare D-Max before and after"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(position)}
-            tabIndex={0}
-            onKeyDown={(event) => {
-              if (event.key === "ArrowLeft") setPosition((value) => clamp(value - 5));
-              if (event.key === "ArrowRight") setPosition((value) => clamp(value + 5));
-            }}
+            className="absolute inset-0 overflow-hidden"
+            style={{ clipPath: `inset(0 ${position}% 0 0)` }}
+            aria-hidden="true"
           >
-            {/* BEFORE is the full base image. Right side is revealed as the handle moves right. */}
             <Image
-              src="/images/completed-project.jpg"
-              alt="D-Max before bodywork and paint work at Monos"
+              src="/images/customer-dmax.jpg"
+              alt="Completed Isuzu panel beating and spray painting result at Monos"
               fill
               sizes="(max-width: 768px) 100vw, 1024px"
-              priority
               style={{ objectFit: "cover" }}
             />
-
-            {/* AFTER is clipped to the left. Moving the handle left reveals more AFTER. */}
-            <div
-              className="absolute inset-0 overflow-hidden"
-              style={{ clipPath: `inset(0 ${position}% 0 0)` }}
-              aria-hidden="true"
-            >
-              <Image
-                src="/images/customer-dmax.jpg"
-                alt="Completed D-Max bodywork and paint result at Monos"
-                fill
-                sizes="(max-width: 768px) 100vw, 1024px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-
-            <span className="absolute top-5 left-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
-              After
-            </span>
-            <span className="absolute top-5 right-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
-              Before
-            </span>
-
-            <div
-              className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_18px_rgba(0,0,0,.6)]"
-              style={{ left: `${position}%` }}
-              aria-hidden="true"
-            >
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-14 w-14 items-center justify-center rounded-full border-2 border-white bg-black/80 text-white shadow-xl">
-                <span className="text-2xl leading-none" aria-hidden="true">↔</span>
-                <span className="sr-only">Drag to compare</span>
-              </div>
-            </div>
           </div>
 
-          <div className="mt-6 flex flex-col items-center gap-2 text-center">
-            <p className="font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-silver-dim">
-              D-Max • Panel &amp; Paint
-            </p>
-            <p className="text-sm text-silver">← AFTER · drag left &nbsp;|&nbsp; drag right · BEFORE →</p>
+          <span className="absolute top-5 left-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
+            After
+          </span>
+          <span className="absolute top-5 right-5 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-white">
+            Before
+          </span>
+
+          <div
+            className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_18px_rgba(0,0,0,.6)]"
+            style={{ left: `${position}%` }}
+            aria-hidden="true"
+          >
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-14 w-14 items-center justify-center rounded-full border-2 border-white bg-black/80 text-white shadow-xl">
+              <span className="text-2xl leading-none" aria-hidden="true">↔</span>
+              <span className="sr-only">Drag to compare</span>
+            </div>
           </div>
+        </div>
+
+        <div className="mt-6 flex flex-col items-center gap-2 text-center">
+          <p className="font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-silver-dim">
+            Isuzu • Panel &amp; Paint
+          </p>
+          <p className="text-sm text-silver">← AFTER · drag left &nbsp;|&nbsp; drag right · BEFORE →</p>
         </div>
       </div>
     </section>
