@@ -112,6 +112,10 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
+      {slug === "panel-beating-spray-painting" && (
+        <BeforeAfterSection />
+      )}
+
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-5xl px-6 py-16">
           <h2 className="text-2xl font-bold sm:text-3xl">Related Monos services</h2>
@@ -132,4 +136,9 @@ export default async function ServicePage({ params }) {
       </section>
     </main>
   );
+}
+
+function BeforeAfterSection() {
+  const BeforeAfter = require("@/components/BeforeAfter").default;
+  return <BeforeAfter />;
 }
