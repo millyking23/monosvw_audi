@@ -8,6 +8,14 @@ const workshopPhotos = [
     reviewStatus: "needs-visual-review",
   },
   {
+    src: "/images/customer-dmax.jpg",
+    title: "Isuzu Panel & Paint",
+    category: "Panel & Paint",
+    description: "Isuzu panel and paint work completed at the Monos workshop.",
+    service: "/services/panel-beating-spray-painting",
+    reviewStatus: "needs-visual-review",
+  },
+  {
     src: "/images/diagnostics-cluster.jpg",
     title: "Computer Diagnostics",
     category: "Diagnostics",
