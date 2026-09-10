@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "./Reveal";
+import BeforeAfter from "./BeforeAfter";
 import PHOTOS from "@/data/workshopPhotos";
 
 const CATEGORIES = [
@@ -79,7 +80,7 @@ export default function Gallery() {
 
         <div className="mb-6 flex items-center justify-between gap-4">
           <p className="font-mono-tag text-[0.68rem] tracking-[0.12em] uppercase text-silver-dim">
-            {filtered.length} {filtered.length === 1 ? "photo" : "photos"} · {category}
+            {filtered.length + (category === "Panel & Paint" ? 1 : 0)} {filtered.length + (category === "Panel & Paint" ? 1 : 0) === 1 ? "photo" : "photos"} · {category}
           </p>
           <a href="/#book" className="text-sm font-semibold text-white hover:text-red-400 transition-colors">
             Need this work? Book Monos →
@@ -87,6 +88,14 @@ export default function Gallery() {
         </div>
 
         <div className="gallery-grid lg:columns-4 lg:[column-gap:14px]">
+          {category === "Panel & Paint" && (
+            <Reveal>
+              <div className="mb-4 break-inside-avoid">
+                <BeforeAfter embedded />
+              </div>
+            </Reveal>
+          )}
+
           {filtered.map((photo, index) => (
             <Reveal key={photo.src}>
               <button
