@@ -19,7 +19,7 @@ export default function Gallery() {
   const [selected, setSelected] = useState(null);
 
   const filtered = useMemo(
-    () => PHOTOS.filter((photo) => photo.category === category),
+    () => PHOTOS.filter((photo) => photo.category === category && !(category === "Panel & Paint" && photo.src === "/images/customer-dmax.jpg")),
     [category]
   );
 
