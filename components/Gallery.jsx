@@ -86,7 +86,7 @@ export default function Gallery() {
           </a>
         </div>
 
-        <div className="gallery-grid">
+        <div className="gallery-grid lg:columns-4 lg:[column-gap:14px]">
           {filtered.map((photo, index) => (
             <Reveal key={photo.src}>
               <button
@@ -99,7 +99,7 @@ export default function Gallery() {
                   src={photo.src}
                   alt={photo.title}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 400px"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   priority={index < 2}
                   style={{ objectFit: "cover" }}
                 />
