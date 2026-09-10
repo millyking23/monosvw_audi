@@ -1,3 +1,5 @@
+import BeforeAfter from "@/components/BeforeAfter";
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://monovwaudi.co.zw";
 
 const services = {
@@ -112,9 +114,7 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      {slug === "panel-beating-spray-painting" && (
-        <BeforeAfterSection />
-      )}
+      {slug === "panel-beating-spray-painting" && <BeforeAfter />}
 
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-5xl px-6 py-16">
@@ -136,9 +136,4 @@ export default async function ServicePage({ params }) {
       </section>
     </main>
   );
-}
-
-function BeforeAfterSection() {
-  const BeforeAfter = require("@/components/BeforeAfter").default;
-  return <BeforeAfter />;
 }
