@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 const clamp = (value) => Math.min(100, Math.max(0, value));
@@ -15,7 +14,7 @@ export default function BeforeAfter({ embedded = false }) {
 
   const comparison = (
     <div
-      className={`relative overflow-hidden select-none touch-none cursor-ew-resize ${embedded ? "absolute inset-0 h-full w-full rounded-none border-0" : "aspect-[4/3] rounded-2xl border border-white/10 bg-black"}`}
+      className={`relative w-full overflow-hidden select-none touch-none cursor-ew-resize ${embedded ? "absolute inset-0 h-full rounded-none" : "aspect-[4/3] rounded-2xl border border-white/10 bg-black"}`}
       onPointerDown={(event) => {
         event.currentTarget.setPointerCapture(event.pointerId);
         updateFromPointer(event);
@@ -35,26 +34,21 @@ export default function BeforeAfter({ embedded = false }) {
         if (event.key === "ArrowRight") setPosition((value) => clamp(value + 5));
       }}
     >
-      <Image
-        src="/images/completed-project.jpg"
-        alt="Isuzu before panel beating and spray painting at Monos"
-        fill
-        sizes="(max-width: 768px) 100vw, 1024px"
-        priority
-        style={{ objectFit: "cover" }}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/completed-project.jpg')" }}
+        role="img"
+        aria-label="Isuzu before panel beating and spray painting at Monos"
       />
 
       <div
         className="absolute inset-0 overflow-hidden"
-        style={{ clipPath: `inset(0 ${position}% 0 0)` }}
+        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         aria-hidden="true"
       >
-        <Image
-          src="/images/customer-dmax.jpg"
-          alt="Completed Isuzu panel beating and spray painting result at Monos"
-          fill
-          sizes="(max-width: 768px) 100vw, 1024px"
-          style={{ objectFit: "cover" }}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/customer-dmax.jpg')" }}
         />
       </div>
 
