@@ -6,8 +6,6 @@ const FEATURED_SRCS = [
   "/images/panel-repair.jpg",
   "/images/completed-project.jpg",
   "/images/diagnostics-cluster.jpg",
-  "/images/fleet-truck.jpg",
-  "/images/customer-dmax.jpg",
   "/images/back-workshop.jpeg",
 ];
 
