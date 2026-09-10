@@ -5,7 +5,6 @@ import WhyChoose from "@/components/WhyChoose";
 import Services from "@/components/Services";
 import Marquee from "@/components/Marquee";
 import Fleet from "@/components/Fleet";
-import BeforeAfter from "@/components/BeforeAfter";
 import WorkshopPortfolio from "@/components/WorkshopPortfolio";
 import Clients from "@/components/Clients";
 import BookingSection from "@/components/BookingSection";
@@ -28,7 +27,6 @@ export default function HomePage() {
       <Services />
       <Marquee />
       <Fleet />
-      <BeforeAfter />
       <WorkshopPortfolio />
       <Clients />
       <BookingSection />
