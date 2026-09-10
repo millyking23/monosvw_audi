@@ -24,14 +24,6 @@ const workshopPhotos = [
     reviewStatus: "needs-visual-review",
   },
   {
-    src: "/images/customer-dmax.jpg",
-    title: "Customer Vehicle",
-    category: "Mechanical & Service",
-    description: "Customer vehicle photographed during workshop handling.",
-    service: "/services/car-workshop-mechanical-repairs",
-    reviewStatus: "needs-visual-review",
-  },
-  {
     src: "/images/fleet-truck.jpg",
     title: "Fleet Vehicle Support",
     category: "Fleet & Commercial",
