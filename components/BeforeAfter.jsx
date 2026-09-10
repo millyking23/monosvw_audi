@@ -14,7 +14,7 @@ export default function BeforeAfter({ embedded = false }) {
 
   const comparison = (
     <div
-      className={`relative w-full overflow-hidden select-none touch-none cursor-ew-resize ${embedded ? "absolute inset-0 h-full rounded-none" : "aspect-[4/3] rounded-2xl border border-white/10 bg-black"}`}
+      className={`relative w-full overflow-hidden select-none touch-none cursor-ew-resize ${embedded ? "aspect-[3/4] rounded-2xl border border-white/10 bg-black" : "aspect-[4/3] rounded-2xl border border-white/10 bg-black"}`}
       onPointerDown={(event) => {
         event.currentTarget.setPointerCapture(event.pointerId);
         updateFromPointer(event);
@@ -34,74 +34,29 @@ export default function BeforeAfter({ embedded = false }) {
         if (event.key === "ArrowRight") setPosition((value) => clamp(value + 5));
       }}
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/completed-project.jpg')" }}
-        role="img"
-        aria-label="Isuzu before panel beating and spray painting at Monos"
-      />
-
-      <div
-        className="absolute inset-0 overflow-hidden"
-        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
-        aria-hidden="true"
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/customer-dmax.jpg')" }}
-        />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/completed-project.jpg')" }} aria-hidden="true" />
+      <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }} aria-hidden="true">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/customer-dmax.jpg')" }} />
       </div>
-
-      <span className="absolute top-4 left-4 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.62rem] uppercase tracking-[0.14em] text-white">
-        After
-      </span>
-      <span className="absolute top-4 right-4 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.62rem] uppercase tracking-[0.14em] text-white">
-        Before
-      </span>
-
-      <div
-        className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_18px_rgba(0,0,0,.6)]"
-        style={{ left: `${position}%` }}
-        aria-hidden="true"
-      >
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-black/80 text-white shadow-xl">
-          <span className="text-xl leading-none" aria-hidden="true">↔</span>
-          <span className="sr-only">Drag to compare</span>
-        </div>
+      <span className="absolute top-4 left-4 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.62rem] uppercase tracking-[0.14em] text-white">After</span>
+      <span className="absolute top-4 right-4 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 font-mono-tag text-[0.62rem] uppercase tracking-[0.14em] text-white">Before</span>
+      <div className="absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_18px_rgba(0,0,0,.6)]" style={{ left: `${position}%` }} aria-hidden="true">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-black/80 text-white shadow-xl"><span className="text-xl leading-none" aria-hidden="true">↔</span><span className="sr-only">Drag to compare</span></div>
       </div>
     </div>
   );
 
   if (embedded) {
     return (
-      <div className="gallery-item w-full group">
+      <div className="w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
         {comparison}
-        <div className="tag">
-          <span className="block">Isuzu Before &amp; After</span>
-          <span className="block mt-1 opacity-70 normal-case tracking-normal font-sans">Panel &amp; Paint · drag left for after, right for before</span>
+        <div className="px-5 py-4">
+          <h3 className="font-display text-lg font-semibold text-white">Isuzu Before &amp; After</h3>
+          <p className="mt-2 text-sm text-silver">Panel &amp; Paint · drag left for after, right for before.</p>
         </div>
       </div>
     );
   }
 
-  return (
-    <section className="border-b border-white/10">
-      <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
-        <div className="max-w-[760px] mx-auto text-center mb-10">
-          <div className="eyebrow center">Panel &amp; Paint</div>
-          <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
-            Isuzu before &amp; after
-          </h2>
-          <p className="mt-4 text-silver">
-            Drag the handle left to reveal more of the finished Isuzu. Drag it right to reveal more of the vehicle before the bodywork.
-          </p>
-        </div>
-        {comparison}
-        <div className="mt-6 flex flex-col items-center gap-2 text-center">
-          <p className="font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-silver-dim">Isuzu • Panel &amp; Paint</p>
-          <p className="text-sm text-silver">← AFTER · drag left &nbsp;|&nbsp; drag right · BEFORE →</p>
-        </div>
-      </div>
-    </section>
-  );
+  return <section className="border-b border-white/10"><div className="mx-auto max-w-5xl px-6 py-16 sm:py-20"><div className="max-w-[760px] mx-auto text-center mb-10"><div className="eyebrow center">Panel &amp; Paint</div><h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>Isuzu before &amp; after</h2><p className="mt-4 text-silver">Drag the handle left to reveal more of the finished Isuzu. Drag it right to reveal more of the vehicle before the bodywork.</p></div>{comparison}<div className="mt-6 flex flex-col items-center gap-2 text-center"><p className="font-mono-tag text-[0.65rem] uppercase tracking-[0.14em] text-silver-dim">Isuzu • Panel &amp; Paint</p><p className="text-sm text-silver">← AFTER · drag left &nbsp;|&nbsp; drag right · BEFORE →</p></div></div></section>;
 }
