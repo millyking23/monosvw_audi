@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "./Reveal";
+import BeforeAfter from "./BeforeAfter";
 import PHOTOS from "@/data/workshopPhotos";
 
 const CATEGORIES = [
@@ -76,6 +77,12 @@ export default function Gallery() {
             </button>
           ))}
         </div>
+
+        {category === "Panel & Paint" && (
+          <div className="mb-12">
+            <BeforeAfter />
+          </div>
+        )}
 
         <div className="mb-6 flex items-center justify-between gap-4">
           <p className="font-mono-tag text-[0.68rem] tracking-[0.12em] uppercase text-silver-dim">
