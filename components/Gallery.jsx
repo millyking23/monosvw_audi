@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import Reveal from "./Reveal";
-import BeforeAfter from "./BeforeAfter";
 import PHOTOS from "@/data/workshopPhotos";
 
 const CATEGORIES = [
@@ -19,7 +18,7 @@ export default function Gallery() {
   const [selected, setSelected] = useState(null);
 
   const filtered = useMemo(
-    () => PHOTOS.filter((photo) => photo.category === category && !(category === "Panel & Paint" && photo.src === "/images/customer-dmax.jpg")),
+    () => PHOTOS.filter((photo) => photo.category === category),
     [category]
   );
 
@@ -88,8 +87,6 @@ export default function Gallery() {
         </div>
 
         <div className="gallery-grid">
-          {category === "Panel & Paint" && <BeforeAfter embedded />}
-
           {filtered.map((photo, index) => (
             <Reveal key={photo.src}>
               <button
