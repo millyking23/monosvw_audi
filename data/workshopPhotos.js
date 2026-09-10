@@ -8,14 +8,6 @@ const workshopPhotos = [
     reviewStatus: "needs-visual-review",
   },
   {
-    src: "/images/completed-project.jpg",
-    title: "Completed Bodywork",
-    category: "Panel & Paint",
-    description: "Completed vehicle bodywork and finishing project.",
-    service: "/services/panel-beating-spray-painting",
-    reviewStatus: "needs-visual-review",
-  },
-  {
     src: "/images/diagnostics-cluster.jpg",
     title: "Computer Diagnostics",
     category: "Diagnostics",
