@@ -80,7 +80,7 @@ export default function Gallery() {
 
         <div className="mb-6 flex items-center justify-between gap-4">
           <p className="font-mono-tag text-[0.68rem] tracking-[0.12em] uppercase text-silver-dim">
-            {filtered.length + (category === "Panel & Paint" ? 1 : 0)} {filtered.length + (category === "Panel & Paint" ? 1 : 0) === 1 ? "photo" : "photos"} · {category}
+            {filtered.length + (category === "Panel & Paint" ? 2 : 0)} {filtered.length + (category === "Panel & Paint" ? 2 : 0) === 1 ? "photo" : "photos"} · {category}
           </p>
           <a href="/#book" className="text-sm font-semibold text-white hover:text-red-400 transition-colors">
             Need this work? Book Monos →
@@ -89,11 +89,24 @@ export default function Gallery() {
 
         <div className="gallery-grid lg:columns-4 lg:[column-gap:14px]">
           {category === "Panel & Paint" && (
-            <Reveal>
-              <div className="mb-4 break-inside-avoid">
-                <BeforeAfter embedded />
-              </div>
-            </Reveal>
+            <>
+              <Reveal>
+                <div className="mb-4 break-inside-avoid">
+                  <BeforeAfter embedded />
+                </div>
+              </Reveal>
+              <Reveal>
+                <div className="mb-4 break-inside-avoid">
+                  <BeforeAfter
+                    embedded
+                    beforeSrc="/images/WhatsApp Image 2026-09-11 at 11.39.32.jpeg"
+                    afterSrc="/images/WhatsApp Image 2026-09-11 at 11.42.18.jpeg"
+                    title="Panel Beating Before & After"
+                    ariaLabel="Drag to compare panel beating before and after"
+                  />
+                </div>
+              </Reveal>
+            </>
           )}
 
           {filtered.map((photo, index) => (
