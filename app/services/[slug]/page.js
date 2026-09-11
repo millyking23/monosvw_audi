@@ -3,6 +3,13 @@ import BeforeAfter from "@/components/BeforeAfter";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.monovwaudi.co.zw";
 
 const services = {
+  "car-workshop-mechanical-repairs": {
+    title: "Car Mechanic & Vehicle Repairs in Bulawayo",
+    description: "Car mechanic and vehicle repair services in Bulawayo, Zimbabwe, including servicing, mechanical repairs, diagnostics, brakes, cooling systems and general fault finding.",
+    intro: "Need a reliable mechanic in Bulawayo? Monos provides vehicle servicing, mechanical repairs, diagnostics and practical fault finding for VW, Audi and other vehicles.",
+    points: ["Routine vehicle servicing and maintenance", "Mechanical fault diagnosis and repairs", "Brake, suspension and steering work", "Engine and cooling-system checks", "Starting, running and performance problems", "Computer diagnostics and fault-code checks"],
+    keywords: "mechanic Bulawayo, car mechanic Bulawayo, car repairs Bulawayo, vehicle repairs Bulawayo"
+  },
   "vw-service-repairs": {
     title: "VW Service & Repairs in Bulawayo",
     description: "Professional Volkswagen servicing and repairs in Bulawayo, Zimbabwe, with diagnostics, mechanical repairs and preventative maintenance.",
@@ -48,13 +55,13 @@ const services = {
 };
 
 const relatedServices = [
+  ["car-workshop-mechanical-repairs", "Car Mechanic & Vehicle Repairs"],
   ["vw-service-repairs", "VW Service & Repairs"],
   ["audi-service-repairs", "Audi Service & Repairs"],
   ["computer-diagnostics", "Computer Diagnostics"],
   ["fuel-injector-testing-cleaning", "Fuel Injector Testing & Cleaning"],
   ["panel-beating-spray-painting", "Panel Beating & Spray Painting"],
-  ["fleet-maintenance", "Fleet Vehicle Maintenance"],
-  ["car-workshop-mechanical-repairs", "Car Workshop & Mechanical Repairs"]
+  ["fleet-maintenance", "Fleet Vehicle Maintenance"]
 ];
 
 export function generateStaticParams() {
