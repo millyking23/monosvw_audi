@@ -23,6 +23,14 @@ const workshopPhotos = [
     service: "/services/car-workshop-mechanical-repairs",
     reviewStatus: "needs-visual-review",
   },
+  {
+    src: "/images/WhatsApp Image 2026-09-11 at 11.44.08.jpeg",
+    title: "Volkswagen Golf",
+    category: "Mechanical & Service",
+    description: "Volkswagen Golf photographed at the Monos workshop.",
+    service: "/services/car-workshop-mechanical-repairs",
+    reviewStatus: "needs-visual-review",
+  },
   ...[
     "vehicles-in-service-2.jpg",
     "vehicles-in-service-3.jpg",
