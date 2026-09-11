@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
         url: SITE_URL,
         telephone: "+263712579531",
         email: "monosvw_audiservice@yahoo.com",
-        address: { "@type": "PostalAddress", streetAddress: "16 Iron Bridge Rd", addressLocality: "Bulawayo", addressCountry: "ZW" },
+        address: { "@type": "PostalAddress", streetAddress: "16 Ironbridge Road, Donnington", addressLocality: "Bulawayo", addressCountry: "ZW" },
         foundingDate: "2016",
         areaServed: [{ "@type": "City", name: "Bulawayo" }, { "@type": "Country", name: "Zimbabwe" }],
         serviceType: ["Car workshop", "Vehicle servicing", "Mechanical repairs", "VW servicing and repairs", "Audi servicing and repairs", "Computer diagnostics", "Auto electrical services", "Fuel injector testing and cleaning", "Panel beating", "Spray painting", "Accident repairs", "Fleet maintenance", "Vehicle parts supply"],
