@@ -1,4 +1,4 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://monovwaudi.co.zw";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.monovwaudi.co.zw";
 
 export const metadata = {
   title: "About Monos VW-Audi Service & Parts in Bulawayo",
