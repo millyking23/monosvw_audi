@@ -101,8 +101,8 @@ export default function Gallery() {
                     embedded
                     beforeSrc="/images/WhatsApp Image 2026-09-11 at 11.39.32.jpeg"
                     afterSrc="/images/WhatsApp Image 2026-09-11 at 11.42.18.jpeg"
-                    title="Panel Beating Before & After"
-                    ariaLabel="Drag to compare panel beating before and after"
+                    title="Flatbed Truck Before & After"
+                    ariaLabel="Drag to compare flatbed truck panel beating before and after"
                   />
                 </div>
               </Reveal>
