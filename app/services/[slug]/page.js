@@ -1,6 +1,6 @@
 import BeforeAfter from "@/components/BeforeAfter";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://monovwaudi.co.zw";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.monovwaudi.co.zw";
 
 const services = {
   "vw-service-repairs": {
