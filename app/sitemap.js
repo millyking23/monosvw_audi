@@ -7,6 +7,7 @@ export default function sitemap() {
   return [
     { url: SITE_URL, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/areas/bulawayo`, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${SITE_URL}/gallery`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/auto-advice`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/trust/local-business`, changeFrequency: "monthly", priority: 0.75 },
     ...serviceSlugs.map((slug) => ({ url: `${SITE_URL}/services/${slug}`, changeFrequency: "monthly", priority: 0.9 })),
