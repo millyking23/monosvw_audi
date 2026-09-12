@@ -1,4 +1,4 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://monovwaudi.co.zw";
+const SITE_URL = "https://www.monovwaudi.co.zw";
 
 export const metadata = {
   title: "Panel Beating & Spray Painting in Bulawayo | Monos",
