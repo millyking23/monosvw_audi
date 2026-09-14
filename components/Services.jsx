@@ -14,6 +14,7 @@ const CATEGORIES = [
     items: ["VW Servicing & Repairs", "Audi Servicing & Repairs", "Computer Diagnostics", "Vehicle Programming", "ECU Repairs", "Key Coding & Spare Key Programming"],
     cta: { href: "#book", label: "Book This Service" },
     learn: { href: "/services/vw-service-repairs", label: "VW service & repairs →" },
+    secondaryLearn: { href: "/services/audi-service-repairs", label: "Audi service & repairs →" },
   },
   {
     num: "03 / DIAGNOSTICS",
@@ -71,6 +72,7 @@ export default function Services() {
                 <div className="mt-6 flex flex-wrap items-center gap-4">
                   <a href={cat.cta.href} className="btn btn-ghost btn-sm self-start">{cat.cta.label}</a>
                   {cat.learn && <a href={cat.learn.href} className="text-sm font-medium text-silver hover:text-white">{cat.learn.label}</a>}
+                  {cat.secondaryLearn && <a href={cat.secondaryLearn.href} className="text-sm font-medium text-silver hover:text-white">{cat.secondaryLearn.label}</a>}
                 </div>
               </div>
             </Reveal>
