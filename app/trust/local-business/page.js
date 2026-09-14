@@ -2,17 +2,30 @@ const SITE_URL = "https://www.monovwaudi.co.zw";
 
 export const metadata = {
   title: "About Monos VW-Audi Service & Parts in Bulawayo",
-  description: "Learn about Monos VW-Audi Service & Parts in Donnington, Bulawayo, including its workshop location, services and local supplier registration record.",
+  description: "Learn about Monos VW-Audi Service & Parts in Donnington, Bulawayo, including its workshop location, services and local business information.",
   alternates: { canonical: `${SITE_URL}/trust/local-business` },
+  openGraph: { title: "About Monos VW-Audi Service & Parts in Bulawayo", description: "Local business information, workshop location and services for Monos in Donnington, Bulawayo.", url: `${SITE_URL}/trust/local-business`, type: "website" },
 };
 
 export default function LocalBusinessTrustPage() {
+  const pageUrl = `${SITE_URL}/trust/local-business`;
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    name: "Monos VW-Audi Service & Parts — Local Business Information",
-    url: `${SITE_URL}/trust/local-business`,
-    about: { "@type": "AutoRepair", name: "Monos VW-Audi Service & Parts (Pvt) Ltd", url: SITE_URL },
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        name: "Monos VW-Audi Service & Parts — Local Business Information",
+        url: pageUrl,
+        about: { "@type": "AutoRepair", name: "Monos VW-Audi Service & Parts (Pvt) Ltd", url: SITE_URL, address: { "@type": "PostalAddress", streetAddress: "16 Ironbridge Road, Donnington", addressLocality: "Bulawayo", addressCountry: "ZW" } },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Local Business", item: pageUrl }
+        ]
+      }
+    ]
   };
 
   return (
