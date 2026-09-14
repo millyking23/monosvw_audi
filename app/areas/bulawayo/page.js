@@ -5,10 +5,12 @@ export const metadata = {
   description: "Monos VW-Audi Service & Parts in Donnington, Bulawayo provides vehicle servicing, diagnostics, repairs, injector testing and cleaning, panel beating, spray painting and fleet maintenance.",
   keywords: ["car repairs Bulawayo", "VW specialist Bulawayo", "Audi specialist Bulawayo", "car service Bulawayo", "vehicle diagnostics Bulawayo", "panel beating Bulawayo"],
   alternates: { canonical: `${SITE_URL}/areas/bulawayo` },
+  openGraph: { title: "Car Repairs & VW Audi Specialists in Bulawayo", description: "Vehicle servicing, diagnostics, repairs, injector testing, panel beating and spray painting in Donnington, Bulawayo.", url: `${SITE_URL}/areas/bulawayo`, type: "website" },
 };
 
 const services = [
   ["VW & Audi servicing", "/services/vw-service-repairs"],
+  ["Audi service & repairs", "/services/audi-service-repairs"],
   ["Computer diagnostics", "/services/computer-diagnostics"],
   ["Fuel injector testing & cleaning", "/services/fuel-injector-testing-cleaning"],
   ["Panel beating & spray painting", "/services/panel-beating-spray-painting"],
@@ -16,13 +18,25 @@ const services = [
 ];
 
 export default function BulawayoPage() {
+  const pageUrl = `${SITE_URL}/areas/bulawayo`;
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    name: "Monos VW-Audi Service & Parts (Pvt) Ltd",
-    url: SITE_URL,
-    address: { "@type": "PostalAddress", streetAddress: "16 Ironbridge Road, Donnington", addressLocality: "Bulawayo", addressCountry: "ZW" },
-    areaServed: { "@type": "City", name: "Bulawayo" },
+    "@graph": [
+      {
+        "@type": "AutoRepair",
+        name: "Monos VW-Audi Service & Parts (Pvt) Ltd",
+        url: SITE_URL,
+        address: { "@type": "PostalAddress", streetAddress: "16 Ironbridge Road, Donnington", addressLocality: "Bulawayo", addressCountry: "ZW" },
+        areaServed: { "@type": "City", name: "Bulawayo" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Bulawayo", item: pageUrl }
+        ]
+      }
+    ]
   };
 
   return (
