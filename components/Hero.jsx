@@ -55,6 +55,15 @@ export default function Hero() {
           </a>
         </div>
 
+        <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="/services/vw-service-repairs" className="text-silver hover:text-white underline underline-offset-4">
+            VW service &amp; repairs →
+          </a>
+          <a href="/services/audi-service-repairs" className="text-silver hover:text-white underline underline-offset-4">
+            Audi service &amp; repairs →
+          </a>
+        </div>
+
         <div className="hero-stats">
           {TRUST_POINTS.map(([value, label]) => (
             <div key={label}>
