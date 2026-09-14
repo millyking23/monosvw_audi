@@ -93,14 +93,27 @@ export default async function ServicePage({ params }) {
   const service = services[slug];
   if (!service) return null;
 
+  const pageUrl = `${SITE_URL}/services/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: service.title,
-    description: service.description,
-    provider: { "@type": "AutoRepair", name: "Monos VW-Audi Service & Parts (Pvt) Ltd", url: SITE_URL, address: { "@type": "PostalAddress", streetAddress: "16 Ironbridge Road, Donnington", addressLocality: "Bulawayo", addressCountry: "ZW" } },
-    areaServed: { "@type": "City", name: "Bulawayo" },
-    url: `${SITE_URL}/services/${slug}`
+    "@graph": [
+      {
+        "@type": "Service",
+        name: service.title,
+        description: service.description,
+        provider: { "@type": "AutoRepair", name: "Monos VW-Audi Service & Parts (Pvt) Ltd", url: SITE_URL, address: { "@type": "PostalAddress", streetAddress: "16 Ironbridge Road, Donnington", addressLocality: "Bulawayo", addressCountry: "ZW" } },
+        areaServed: { "@type": "City", name: "Bulawayo" },
+        url: pageUrl
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/#services` },
+          { "@type": "ListItem", position: 3, name: service.title, item: pageUrl }
+        ]
+      }
+    ]
   };
 
   return (
