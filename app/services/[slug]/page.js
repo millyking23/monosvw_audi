@@ -23,9 +23,9 @@ const services = {
     title: "Audi Service & Repairs in Bulawayo",
     description: "Audi servicing, diagnostics and repairs in Bulawayo, Zimbabwe, from Monos VW-Audi Service & Parts.",
     intro: "From routine maintenance to difficult faults, Monos helps Audi owners in Bulawayo diagnose problems accurately and repair them properly.",
-    points: ["Audi servicing and preventative maintenance", "Computer diagnostics and fault finding", "Engine and drivetrain repairs", "Brake, suspension and steering work", "Electrical fault diagnosis"],
+    points: ["Audi servicing and preventative maintenance", "Computer diagnostics and fault finding", "Engine and drivetrain repairs", "Brake, suspension and steering work", "Electrical fault diagnosis", "VW-Audi parts and repair support"],
     keywords: "Audi service Bulawayo, Audi mechanic Bulawayo, Audi repairs Bulawayo",
-    body: "Audi vehicles often benefit from systematic diagnostics before parts are replaced. Monos combines computer fault-code checks with mechanical and electrical inspection for Audi servicing and repairs, covering routine maintenance, performance problems, braking, suspension and drivetrain concerns."
+    body: "Monos provides Audi servicing and repair support in Donnington, Bulawayo, covering routine maintenance as well as mechanical, electrical and drivability faults. Audi work can start with computer diagnostics and fault-code checks, followed by physical inspection and testing to identify the underlying problem before parts are replaced."
   },
   "computer-diagnostics": {
     title: "Computer Diagnostics in Bulawayo",
