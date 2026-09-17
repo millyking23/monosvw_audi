@@ -10,7 +10,7 @@ const SITE_URL = "https://www.monovwaudi.co.zw";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Monos VW-Audi Service & Parts | Car Service, Repairs & Bodywork in Bulawayo", template: "%s | Monos VW-Audi Service & Parts" },
+  title: { default: "Monos VW-Audi Service & Parts | Car Service, Repairs & Bodywork in Bulawayo", template: "%s | Monos" },
   description: "Monos is a Bulawayo vehicle workshop for VW, Audi and other makes and models. Car servicing, mechanical repairs, diagnostics, auto electrical, injector testing and cleaning, panel beating, spray painting, accident repairs, fleet maintenance and parts.",
   keywords: ["Monos", "Monos VW Audi", "Monos Bulawayo", "car workshop Bulawayo", "mechanic Bulawayo", "car repairs Bulawayo", "car service Bulawayo", "vehicle repairs Bulawayo", "VW specialist Bulawayo", "Audi specialist Bulawayo", "vehicle diagnostics Bulawayo", "auto electrician Bulawayo", "panel beating Bulawayo", "spray painting Bulawayo", "accident repairs Bulawayo", "fuel injector testing Bulawayo", "fuel injector cleaning Bulawayo", "fleet maintenance Zimbabwe"],
   authors: [{ name: "Monos VW-Audi Service & Parts (Pvt) Ltd" }],
