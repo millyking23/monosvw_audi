@@ -1,7 +1,7 @@
 const SITE_URL = "https://www.monovwaudi.co.zw";
 
 export const metadata = {
-  title: "Car Overheating in Bulawayo | Monos",
+  title: "Car Overheating in Bulawayo",
   description: "Car overheating in Bulawayo? Monos checks cooling-system faults, diagnostics and related repairs for VW, Audi and other vehicles.",
   alternates: { canonical: `${SITE_URL}/problems/car-overheating-bulawayo` },
 };
