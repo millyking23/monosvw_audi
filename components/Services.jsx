@@ -41,7 +41,7 @@ const CATEGORIES = [
     num: "06 / PARTS SUPPLY",
     title: "Vehicle Parts — Available to Order",
     items: ["All Makes & Models", "Engine & Mechanical Parts", "Electrical & Diagnostic Parts", "Body Panels & Exterior Parts", "Doors, Fenders & Bumpers", "Parts Sourced from South Africa"],
-    cta: { href: "#book", label: "Request Parts" },
+    cta: { href: "#parts", label: "Request Parts" },
     learn: { href: "/services/fleet-maintenance", label: "Parts & fleet support →" },
   },
 ];
