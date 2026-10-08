@@ -33,16 +33,16 @@ const CATEGORIES = [
   {
     num: "05 / BODY & PAINT",
     title: "Panel Beating & Spray Painting",
-    items: ["Panel Beating", "Spray Painting", "Accident Repairs", "Chassis Straightening", "Dent & Body Repairs", "Vehicle Refinishing"],
+    items: ["Panel Beating", "Spray Painting", "Accident Repairs", "Chassis Straightening", "Dent & Body Repairs", "Replacement Body Panels"],
     cta: { href: "#book", label: "Get a Bodywork Quote" },
     learn: { href: "/services/panel-beating-spray-painting", label: "Panel & paint in Bulawayo →" },
   },
   {
-    num: "06 / FLEET & MACHINERY",
-    title: "Fleet, Machinery & Parts",
-    items: ["Fleet Maintenance", "Machine Repairs", "Construction Equipment Repairs", "On-site Repairs", "Breakdown Assistance", "Vehicle & Machine Parts Supply"],
-    cta: { href: "#fleet", label: "Fleet Proposal" },
-    learn: { href: "/services/fleet-maintenance", label: "Fleet maintenance in Bulawayo →" },
+    num: "06 / PARTS SUPPLY",
+    title: "Vehicle Parts — Available to Order",
+    items: ["All Makes & Models", "Engine & Mechanical Parts", "Electrical & Diagnostic Parts", "Body Panels & Exterior Parts", "Doors, Fenders & Bumpers", "Parts Sourced from South Africa"],
+    cta: { href: "#book", label: "Request Parts" },
+    learn: { href: "/services/fleet-maintenance", label: "Parts & fleet support →" },
   },
 ];
 
@@ -53,10 +53,10 @@ export default function Services() {
         <div className="max-w-[680px] mb-16">
           <div className="eyebrow">Full Workshop Capability</div>
           <h2 className="font-display font-semibold text-white" style={{ fontSize: "clamp(1.9rem,4vw,3rem)" }}>
-            One workshop. Cars, diagnostics, bodywork & paint.
+            One workshop. Cars, diagnostics, bodywork, paint & parts.
           </h2>
           <p className="mt-4 text-silver">
-            Monos works on VW, Audi and other makes and models. From routine servicing and mechanical repairs to computer diagnostics, fuel injector testing and cleaning, panel beating and professional spray painting — our Bulawayo workshop covers the job end to end.
+            Monos works on VW, Audi and other makes and models. We provide servicing, mechanical repairs, computer diagnostics, fuel injector testing and cleaning, panel beating and professional spray painting. Vehicle parts are also available to order for all makes and models, with parts sourced from suppliers in South Africa. This can include mechanical and electrical parts as well as body components such as doors, fenders, bumpers and other replacement panels.
           </p>
         </div>
 
