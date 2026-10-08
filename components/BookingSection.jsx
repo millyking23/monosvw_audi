@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import BookingForm from "./BookingForm";
 import QuoteForm from "./QuoteForm";
+import PartsForm from "./PartsForm";
 
 export default function BookingSection() {
   const [tab, setTab] = useState("book");
@@ -10,6 +11,7 @@ export default function BookingSection() {
   useEffect(() => {
     const syncFromHash = () => {
       if (window.location.hash === "#quote") setTab("quote");
+      if (window.location.hash === "#parts") setTab("parts");
     };
     syncFromHash();
     window.addEventListener("hashchange", syncFromHash);
@@ -43,9 +45,17 @@ export default function BookingSection() {
           >
             Request a Quote
           </button>
+          <button
+            id="parts"
+            className={`tab-btn ${tab === "parts" ? "active" : ""}`}
+            onClick={() => setTab("parts")}
+            type="button"
+          >
+            Order Parts
+          </button>
         </div>
 
-        {tab === "book" ? <BookingForm /> : <QuoteForm />}
+        {tab === "book" ? <BookingForm /> : tab === "quote" ? <QuoteForm /> : <PartsForm />}
       </div>
     </section>
   );
