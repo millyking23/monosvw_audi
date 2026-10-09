@@ -140,7 +140,7 @@ export default async function ServicePage({ params }) {
             <p>Based in Donnington, Bulawayo, Monos provides VW and Audi specialist support alongside general vehicle servicing, diagnostics, mechanical repairs, panel beating, spray painting, injector testing and parts supply.</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a href="https://wa.me/263712579531?text=Hi%20Monos%2C%20I%27d%20like%20to%20enquire%20about%20your%20service." className="rounded-full bg-white px-6 py-3 font-semibold text-black">WhatsApp Monos</a>
+            <a href={slug === "parts-supply" ? "https://wa.me/263712579531?text=Hi%20Monos%2C%20I%20need%20a%20vehicle%20part.%20My%20vehicle%20make%2C%20model%20and%20year%20are%3A" : "https://wa.me/263712579531?text=Hi%20Monos%2C%20I%27d%20like%20to%20enquire%20about%20your%20service."} className="rounded-full bg-white px-6 py-3 font-semibold text-black">{slug === "parts-supply" ? "Request Parts on WhatsApp" : "WhatsApp Monos"}</a>
             <a href="tel:+263712579531" className="rounded-full border border-white/20 px-6 py-3 font-semibold">Call Monos</a>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default async function ServicePage({ params }) {
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="text-2xl font-bold sm:text-3xl">Visit Monos in Donnington</h2>
         <p className="mt-4 max-w-2xl leading-7 opacity-75">Monos VW-Audi Service & Parts is based at 16 Ironbridge Road, Donnington, Bulawayo. We service and repair VW, Audi and other vehicles.</p>
-        <a href="/" className="mt-7 inline-block font-semibold underline underline-offset-4">See all Monos services →</a>
+        <a href={slug === "parts-supply" ? "/#parts" : "/"} className="mt-7 inline-block font-semibold underline underline-offset-4">{slug === "parts-supply" ? "Submit a parts request →" : "See all Monos services →"}</a>
       </section>
     </main>
   );
