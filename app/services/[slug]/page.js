@@ -3,6 +3,15 @@ import BeforeAfter from "@/components/BeforeAfter";
 const SITE_URL = "https://www.monovwaudi.co.zw";
 
 const services = {
+  "parts-supply": {
+    title: "Vehicle Parts in Bulawayo — Available to Order from South Africa",
+    description: "Request vehicle parts in Bulawayo from Monos VW-Audi Service & Parts. Parts for all makes and models can be sourced from South Africa, including engines, electrical parts, doors, fenders and bumpers.",
+    intro: "Looking for a car part that is not in stock locally? Monos can help you request parts for VW, Audi and other makes and models, with sourcing from suppliers in South Africa.",
+    points: ["Parts for all vehicle makes and models, subject to availability", "Engine and mechanical components", "Electrical and diagnostic-related parts", "Body panels, doors, fenders and bumpers", "Send vehicle details and a photo to help identify the correct part", "Request a quote for part cost and estimated delivery before ordering"],
+    keywords: "car parts Bulawayo, vehicle spares Bulawayo, auto spares Bulawayo, VW parts Bulawayo, Audi parts Bulawayo, car body panels Bulawayo, fenders and bumpers Bulawayo",
+    body: "Parts are supplied on order rather than promised as immediately available stock. Tell us the vehicle make, model, year, engine details where known and the exact part you need. Photos or a part number can help us identify the correct item. We will check sourcing options and provide a quote and expected delivery information where available. Availability, pricing and delivery times must be confirmed before an order is placed."
+  },
+
   "car-workshop-mechanical-repairs": {
     title: "Car Mechanic & Vehicle Repairs in Bulawayo",
     description: "Car mechanic and vehicle repair services in Bulawayo, Zimbabwe, including servicing, mechanical repairs, diagnostics, brakes, cooling systems and general fault finding.",
@@ -68,7 +77,8 @@ const relatedServices = [
   ["computer-diagnostics", "Computer Diagnostics"],
   ["fuel-injector-testing-cleaning", "Fuel Injector Testing & Cleaning"],
   ["panel-beating-spray-painting", "Panel Beating & Spray Painting"],
-  ["fleet-maintenance", "Fleet Vehicle Maintenance"]
+  ["fleet-maintenance", "Fleet Vehicle Maintenance"],
+  ["parts-supply", "Vehicle Parts — Order from South Africa"]
 ];
 
 export function generateStaticParams() {
