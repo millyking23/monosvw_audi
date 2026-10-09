@@ -15,6 +15,7 @@ const services = [
   ["Fuel injector testing & cleaning", "/services/fuel-injector-testing-cleaning"],
   ["Panel beating & spray painting", "/services/panel-beating-spray-painting"],
   ["Fleet maintenance", "/services/fleet-maintenance"],
+  ["Vehicle parts sourced from South Africa", "/services/parts-supply"],
 ];
 
 export default function BulawayoPage() {
@@ -45,7 +46,7 @@ export default function BulawayoPage() {
       <section className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] opacity-60">Donnington · Bulawayo · Zimbabwe</p>
         <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">Car Repairs & VW-Audi Specialists in Bulawayo</h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 opacity-80">Looking for a trusted workshop in Bulawayo? Monos VW-Audi Service & Parts provides servicing, diagnostics, mechanical repairs, injector testing and cleaning, body repairs and spray painting for VW, Audi and other vehicles.</p>
+        <p className="mt-6 max-w-3xl text-lg leading-8 opacity-80">Looking for a trusted workshop in Bulawayo? Monos VW-Audi Service & Parts provides servicing, diagnostics, mechanical repairs, injector testing and cleaning, body repairs, spray painting and vehicle parts ordering for VW, Audi and other vehicles. Parts can be requested from South Africa subject to availability, with pricing and estimated delivery confirmed before ordering.</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="https://wa.me/263712579531?text=Hi%20Monos%2C%20I%20found%20you%20online%20and%20would%20like%20to%20book%20my%20vehicle." className="rounded-full bg-white px-6 py-3 font-semibold text-black">WhatsApp Monos</a>
           <a href="tel:+263712579531" className="rounded-full border border-white/20 px-6 py-3 font-semibold">Call +263 71 257 9531</a>
@@ -65,7 +66,7 @@ export default function BulawayoPage() {
         <h2 className="text-2xl font-bold sm:text-3xl">Why drivers choose Monos</h2>
         <div className="mt-8 grid gap-5 sm:grid-cols-3">
           <div><h3 className="font-semibold">Accurate diagnosis</h3><p className="mt-2 opacity-70">Find the cause before replacing parts unnecessarily.</p></div>
-          <div><h3 className="font-semibold">Broad capability</h3><p className="mt-2 opacity-70">Mechanical, electrical, diagnostics, bodywork and paint under one roof.</p></div>
+          <div><h3 className="font-semibold">Broad capability</h3><p className="mt-2 opacity-70">Mechanical, electrical, diagnostics, bodywork, paint and parts-order support in one place.</p></div>
           <div><h3 className="font-semibold">Convenient location</h3><p className="mt-2 opacity-70">Visit us at 16 Ironbridge Road, Donnington, Bulawayo.</p></div>
         </div>
       </section>
