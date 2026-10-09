@@ -174,6 +174,7 @@ export default async function ServicePage({ params }) {
         <h2 className="text-2xl font-bold sm:text-3xl">Visit Monos in Donnington</h2>
         <p className="mt-4 max-w-2xl leading-7 opacity-75">Monos VW-Audi Service & Parts is based at 16 Ironbridge Road, Donnington, Bulawayo. We service and repair VW, Audi and other vehicles.</p>
         <a href={slug === "parts-supply" ? "/#parts" : "/"} className="mt-7 inline-block font-semibold underline underline-offset-4">{slug === "parts-supply" ? "Submit a parts request →" : "See all Monos services →"}</a>
+        <a href="/areas/bulawayo" className="mt-4 ml-5 inline-block font-semibold underline underline-offset-4">Vehicle services in Bulawayo →</a>
       </section>
     </main>
   );
