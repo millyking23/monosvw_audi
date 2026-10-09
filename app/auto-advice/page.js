@@ -19,6 +19,7 @@ const articles = [
   ["VW & Audi servicing", "/services/vw-service-repairs", "Why regular servicing helps catch problems before they become expensive."],
   ["Car workshop & mechanical repairs", "/services/car-workshop-mechanical-repairs", "Workshop services for VW, Audi and other makes and models."],
   ["Panel beating & spray painting", "/services/panel-beating-spray-painting", "Accident repairs, dents, bodywork and spray painting for all makes."],
+  ["How to order vehicle parts from South Africa", "/services/parts-supply", "What vehicle details to send when requesting engines, electrical parts, doors, fenders or bumpers."],
 ];
 
 export default function Page() {
