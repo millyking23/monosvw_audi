@@ -1,6 +1,6 @@
 const SITE_URL = "https://www.monovwaudi.co.zw";
 
-const serviceSlugs = ["vw-service-repairs", "audi-service-repairs", "computer-diagnostics", "fuel-injector-testing-cleaning", "panel-beating-spray-painting", "fleet-maintenance", "car-workshop-mechanical-repairs"];
+const serviceSlugs = ["vw-service-repairs", "audi-service-repairs", "computer-diagnostics", "fuel-injector-testing-cleaning", "panel-beating-spray-painting", "fleet-maintenance", "car-workshop-mechanical-repairs", "parts-supply"];
 const problemSlugs = ["vw-audi-wont-start-bulawayo", "car-overheating-bulawayo", "check-engine-light-bulawayo", "car-losing-power-bulawayo", "fuel-injector-problems-bulawayo", "rough-idle-bulawayo", "brake-problems-bulawayo"];
 
 export default function sitemap() {
