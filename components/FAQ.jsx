@@ -7,6 +7,7 @@ const FAQS = [
   { q: "Can you handle accident repairs?", a: "Yes, our panel and paint shop carries out accident repairs, including chassis straightening and careful body and paint finishing." },
   { q: "Do you offer breakdown assistance?", a: "Yes, including on-site repairs for fleet and construction equipment. Use the emergency breakdown button on this site or call us directly." },
   { q: "How do I set up a corporate fleet contract?", a: "Submit a request via the fleet proposal form or contact us directly — we'll design a scheduled maintenance programme around your fleet size and operations." },
+  { q: "Can you source car parts that are not in stock?", a: "Yes. Parts for VW, Audi and other makes and models can be requested and sourced from suppliers in South Africa, subject to availability. Send us the vehicle make, model, year and part required, plus a photo or part number if available. We will confirm pricing and estimated delivery before you order." },
   { q: "Can I track the progress of my vehicle's repair?", a: "A customer portal for live service tracking is in development. In the meantime, our service desk provides WhatsApp progress updates." },
   { q: "Are you an established automotive business?", a: "Yes — Monos VW-Audi Service & Parts (Pvt) Ltd was established in Bulawayo in 2016 and provides vehicle servicing, repairs, diagnostics, bodywork, parts and fleet support." },
 ];
