@@ -40,7 +40,7 @@ const CATEGORIES = [
   {
     num: "06 / PARTS SUPPLY",
     title: "Vehicle Parts — Available to Order",
-    items: ["All Makes & Models", "Engine & Mechanical Parts", "Electrical & Diagnostic Parts", "Body Panels & Exterior Parts", "Doors, Fenders & Bumpers", "Parts Sourced from South Africa"],
+    items: ["All Makes & Models", "Engines, Gearboxes & Mechanical Parts", "Electrical Parts & Components", "Car Doors, Fenders & Bumpers", "Headlights, Tail Lights & Mirrors", "Bonnets, Boot Lids & Body Panels", "Parts Ordered from South Africa"],
     cta: { href: "#parts", label: "Request Parts" },
     learn: { href: "/services/parts-supply", label: "Parts ordering in Bulawayo →" },
   },
@@ -56,7 +56,7 @@ export default function Services() {
             One workshop. Cars, diagnostics, bodywork, paint & parts.
           </h2>
           <p className="mt-4 text-silver">
-            Monos works on VW, Audi and other makes and models. We provide servicing, mechanical repairs, computer diagnostics, fuel injector testing and cleaning, panel beating and professional spray painting. Vehicle parts are also available to order for all makes and models, with parts sourced from suppliers in South Africa. This can include mechanical and electrical parts as well as body components such as doors, fenders, bumpers and other replacement panels.
+            Monos works on VW, Audi and other makes and models. We provide servicing, mechanical repairs, computer diagnostics, fuel injector testing and cleaning, panel beating and professional spray painting. Vehicle parts are also available to order for all makes and models, with parts sourced from suppliers in South Africa. You can ask us to source mechanical and electrical parts, engines and gearboxes, as well as car doors, fenders, bumpers, headlights, tail lights, mirrors, bonnets, boot lids and other replacement body panels. Parts are ordered from South Africa subject to availability; we confirm the quote and estimated delivery before you commit.
           </p>
         </div>
 
