@@ -18,12 +18,12 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
 export const metadata = {
-  title: "VW & Audi Service, Repairs & Diagnostics in Bulawayo",
-  description: "Monos VW-Audi Service & Parts in Donnington, Bulawayo provides Volkswagen and Audi servicing, repairs and diagnostics, plus all-makes mechanical repairs, injector testing, panel beating, spray painting and fleet maintenance.",
+  title: "Monos VW-Audi Service & Parts in Bulawayo | Car Repairs",
+  description: "Monos VW-Audi Service & Parts in Donnington, Bulawayo offers VW and Audi servicing, car repairs, diagnostics, panel beating, spray painting and vehicle parts ordered from South Africa for all makes.",
   alternates: { canonical: "https://www.monovwaudi.co.zw/" },
   openGraph: {
-    title: "VW & Audi Service, Repairs & Diagnostics in Bulawayo | Monos",
-    description: "VW and Audi specialists in Bulawayo for servicing, repairs, diagnostics and bodywork, with support for other makes and models.",
+    title: "Monos VW-Audi Service & Parts in Bulawayo | Car Repairs",
+    description: "Visit Monos in Donnington, Bulawayo for VW/Audi servicing, diagnostics, mechanical repairs, bodywork and car parts sourced from South Africa.",
     url: "https://www.monovwaudi.co.zw/",
     type: "website",
   },
