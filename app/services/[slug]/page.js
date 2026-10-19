@@ -4,12 +4,12 @@ const SITE_URL = "https://www.monovwaudi.co.zw";
 
 const services = {
   "parts-supply": {
-    title: "Vehicle Parts in Bulawayo — Available to Order from South Africa",
-    description: "Request vehicle parts in Bulawayo from Monos VW-Audi Service & Parts. Parts for all makes and models can be sourced from South Africa, including engines, electrical parts, doors, fenders and bumpers.",
-    intro: "Looking for a car part that is not in stock locally? Monos can help you request parts for VW, Audi and other makes and models, with sourcing from suppliers in South Africa.",
-    points: ["Parts for all vehicle makes and models, subject to availability", "Engine and mechanical components", "Electrical and diagnostic-related parts", "Body panels, doors, fenders and bumpers", "Send vehicle details and a photo to help identify the correct part", "Request a quote for part cost and estimated delivery before ordering"],
-    keywords: "car parts Bulawayo, vehicle spares Bulawayo, auto spares Bulawayo, VW parts Bulawayo, Audi parts Bulawayo, car body panels Bulawayo, fenders and bumpers Bulawayo",
-    body: "Parts are supplied on order rather than promised as immediately available stock. Tell us the vehicle make, model, year, engine details where known and the exact part you need. Photos or a part number can help us identify the correct item. We will check sourcing options and provide a quote and expected delivery information where available. Availability, pricing and delivery times must be confirmed before an order is placed."
+    title: "Car Parts & Spares in Bulawayo — Order from South Africa",
+    description: "Need car parts in Bulawayo? Monos can help source parts for VW, Audi and other makes from South Africa, including car doors, bumpers, fenders, headlights, mirrors, engines and gearboxes, subject to availability.",
+    intro: "Need a car door, bumper, fender or another replacement part? Monos helps customers in Bulawayo order vehicle parts from suppliers in South Africa for VW, Audi and other makes and models, subject to availability.",
+    points: ["Parts for VW, Audi and other makes and models, subject to availability", "Car doors, bumpers, fenders and replacement body panels", "Headlights, tail lights, mirrors, bonnets and boot lids", "Engines, gearboxes and mechanical components", "Electrical parts and vehicle components", "Send the make, model, year, part details and a photo if possible", "Get a quote and estimated delivery before placing an order"],
+    keywords: "car parts Bulawayo, car spares Bulawayo, vehicle parts Bulawayo, order car parts from South Africa, car doors Bulawayo, car bumpers Bulawayo, fenders Bulawayo, headlights Bulawayo, car mirrors Bulawayo, VW parts Bulawayo, Audi parts Bulawayo",
+    body: "Monos helps customers source vehicle parts from South Africa when the required item is not readily available locally. You can enquire about car doors, bumpers, fenders, headlights, tail lights, side mirrors, bonnets, boot lids, engines, gearboxes, electrical parts and other replacement components for many makes and models. Parts are supplied on order, not guaranteed as in-stock items. Send the vehicle make, model, year, engine details if known, and a photo or part number. We will check sourcing options and confirm availability, price and estimated delivery before you decide to order."
   },
 
   "car-workshop-mechanical-repairs": {
